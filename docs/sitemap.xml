@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://jrdeng.github.io/about/</loc>
+    <lastmod>2021-01-26T12:34:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/</loc>
+    <lastmod>2021-01-15T15:37:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/10/</loc>
+    <lastmod>2021-01-15T15:37:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/</loc>
+    <lastmod>2021-01-15T15:37:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/iptables/</loc>
+    <lastmod>2021-01-07T16:59:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/kvm/</loc>
+    <lastmod>2021-01-07T16:59:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/9/</loc>
+    <lastmod>2021-01-07T16:59:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/</loc>
+    <lastmod>2021-01-07T16:59:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2021-01-07T16:59:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/lua/</loc>
+    <lastmod>2020-10-30T12:22:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/8/</loc>
+    <lastmod>2020-10-30T12:22:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/ubuntu/</loc>
+    <lastmod>2019-03-29T10:35:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/xrdp/</loc>
+    <lastmod>2019-03-29T10:35:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/7/</loc>
+    <lastmod>2019-03-29T10:35:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/android/</loc>
+    <lastmod>2019-03-15T17:27:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/6/</loc>
+    <lastmod>2019-03-15T17:27:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/5/</loc>
+    <lastmod>2018-11-13T18:03:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/hugo/</loc>
+    <lastmod>2018-11-13T18:03:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/4/</loc>
+    <lastmod>2018-11-08T11:17:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/3/</loc>
+    <lastmod>2018-09-30T15:05:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/graphql/</loc>
+    <lastmod>2018-08-27T23:58:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/python/</loc>
+    <lastmod>2018-08-27T23:58:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/</loc>
+    <lastmod>2018-08-27T23:58:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/post/1/</loc>
+    <lastmod>2018-08-27T23:58:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jrdeng.github.io/archives/</loc>
+  </url>
+  
+</urlset>

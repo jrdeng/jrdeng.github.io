@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试标签 on 无名的旅人</title>
+    <link>https://jrdeng.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/</link>
+    <description>Recent content in 测试标签 on 无名的旅人</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 27 Aug 2018 23:58:43 +0800</lastBuildDate><atom:link href="https://jrdeng.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用github的issue做记录并生成静态博客</title>
+      <link>https://jrdeng.github.io/post/1/</link>
+      <pubDate>Mon, 27 Aug 2018 23:58:43 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/post/1/</guid>
+      <description>构思：
+ 在github上写issue 把issue爬下来（github-issue-fetcher） 评论系统用https://utteranc.es/，可以跟issue完美结合 用hugo等生成静态博客，并发布到github page（blog-hugo）  1. 在github上写issue 正如本篇一样，写到github的issue页面里，并保持OPEN状态。
+可以加一些 Labels（blog-hugo会当作tag写入博客）
+2. 把issue爬下来 写了些Python脚本，通过Github GraphQL API去爬issue list。
+由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。
+然后偶然发现author字段有时候会返回None， 有点没搞明白。。。</description>
+    </item>
+    
+  </channel>
+</rss>

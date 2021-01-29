@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 无名的旅人</title>
+    <link>https://jrdeng.github.io/tags/</link>
+    <description>Recent content in Tags on 无名的旅人</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 07 Jan 2021 16:59:58 +0800</lastBuildDate><atom:link href="https://jrdeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iptables</title>
+      <link>https://jrdeng.github.io/tags/iptables/</link>
+      <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/iptables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KVM</title>
+      <link>https://jrdeng.github.io/tags/kvm/</link>
+      <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/kvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术</title>
+      <link>https://jrdeng.github.io/tags/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>https://jrdeng.github.io/tags/lua/</link>
+      <pubDate>Fri, 30 Oct 2020 12:22:14 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/lua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://jrdeng.github.io/tags/ubuntu/</link>
+      <pubDate>Fri, 29 Mar 2019 10:35:05 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xRDP</title>
+      <link>https://jrdeng.github.io/tags/xrdp/</link>
+      <pubDate>Fri, 29 Mar 2019 10:35:05 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/xrdp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>https://jrdeng.github.io/tags/android/</link>
+      <pubDate>Fri, 15 Mar 2019 17:27:44 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://jrdeng.github.io/tags/hugo/</link>
+      <pubDate>Tue, 13 Nov 2018 18:03:58 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GraphQL</title>
+      <link>https://jrdeng.github.io/tags/graphql/</link>
+      <pubDate>Mon, 27 Aug 2018 23:58:43 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://jrdeng.github.io/tags/python/</link>
+      <pubDate>Mon, 27 Aug 2018 23:58:43 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>测试标签</title>
+      <link>https://jrdeng.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Mon, 27 Aug 2018 23:58:43 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

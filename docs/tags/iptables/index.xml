@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iptables on 无名的旅人</title>
+    <link>https://jrdeng.github.io/tags/iptables/</link>
+    <description>Recent content in iptables on 无名的旅人</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 07 Jan 2021 16:59:58 +0800</lastBuildDate><atom:link href="https://jrdeng.github.io/tags/iptables/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KVM/libvirt forwarding ports to guest via iptables</title>
+      <link>https://jrdeng.github.io/post/9/</link>
+      <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
+      
+      <guid>https://jrdeng.github.io/post/9/</guid>
+      <description># connections from outsidesudo iptables -I FORWARD -o virbr0 -d 192.168.122.226 -j ACCEPTsudo iptables -t nat -A PREROUTING -p tcp --dport 8006 -j DNAT --to 192.</description>
+    </item>
+    
+  </channel>
+</rss>
