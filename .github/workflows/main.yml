@@ -1,0 +1,64 @@
+name: Hugo site generator
+
+on:
+  issues:
+  push:
+    paths:
+      - ".github/**"
+      - "hugo-template/**"
+      - "*.py"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Python3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Setup hugo
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.deb
+          sudo dpkg -i hugo_0.80.0_Linux-64bit.deb
+
+      - name: Query issues by using query-issues-action
+        uses: jrdeng/query-issues-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repo: ${{ github.repository }}
+          author: "jrdeng"
+          output_json: ./issues.json
+
+      - name: Checkout current repo (to ./work_dir/)
+        uses: actions/checkout@v2
+        with:
+          path: work_dir
+          submodules: recursive
+
+      - name: Generate hugo site
+        run: |
+          cd work_dir
+          ./hugo-issue2post.py -r $GITHUB_REPOSITORY -f ../issues.json -d hugo-template/content/post/
+          ls -l hugo-template/content/post/
+          cd hugo-template
+          hugo
+          ls -l
+          cd ../..
+
+      - name: Publish
+        # using :master/doc as github pages, maybe try another branch?
+        run: |
+          git config --global user.name "Github Actions"
+          git config --global user.email "bot@github.com"
+          cd work_dir
+          rm -rf docs/
+          mkdir docs
+          cp hugo-template/public/* docs/ -a
+          echo `date` > docs/workaround
+          git add .
+          git commit -m "auto gen by github actions"
+          git push
+          cd ..
