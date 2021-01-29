@@ -7,21 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>GraphQL | 无名的旅人</title>
-    <meta property="og:title" content="GraphQL - 无名的旅人">
+    <title>使用Github Actions做自动发布 | 无名的旅人</title>
+    <meta property="og:title" content="使用Github Actions做自动发布 - 无名的旅人">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2021-01-29T14:56:52&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-01-29T14:56:52&#43;08:00'>
         
     <meta name="Keywords" content="Python,github,hugo,blog">
-    <meta name="description" content="GraphQL">
+    <meta name="description" content="使用Github Actions做自动发布">
         
     <meta name="author" content="jrdeng">
-    <meta property="og:url" content="https://jrdeng.github.io/tags/graphql/">
+    <meta property="og:url" content="https://jrdeng.github.io/post/11/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://jrdeng.github.io/tags/graphql/index.xml" title="无名的旅人" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -47,7 +50,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://jrdeng.github.io">首页</a>
+                    <a class="current" href="https://jrdeng.github.io">首页</a>
                     
                     <a  href="https://jrdeng.github.io/archives/" title="归档">归档</a>
                     
@@ -67,42 +70,75 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">GraphQL</span>
-        的文章
-    </h3>
-    
-
-    
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="https://jrdeng.github.io/post/1/">用github的issue做记录并生成静态博客</a>
-            </h1>
+            <h1 class="post-title">使用Github Actions做自动发布</h1>
         </header>
         <date class="post-meta meta-date">
-            2018年8月27日
+            2021年1月29日
         </date>
         
+        
+        
         <div class="post-content">
-            构思：
- 在github上写issue 把issue爬下来（github-issue-fetcher） 评论系统用https://utteranc.es/，可以跟issue完美结合 用hugo等生成静态博客，并发布到github page（blog-hugo）  1. 在github上写issue 正如本篇一样，写到github的issue页面里，并保持OPEN状态。
-可以加一些 Labels（blog-hugo会当作tag写入博客）
-2. 把issue爬下来 写了些Python脚本，通过Github GraphQL API去爬issue list。
-由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。
-然后偶然发现author字段有时候会返回None， 有点没搞明白。。。……
-            <p class="readmore"><a href="https://jrdeng.github.io/post/1/">阅读全文</a></p>
+            <p>之前一直用家里的NAS设置cron job来定时拉去issues生成博客， 这样做有一些缺陷：</p>
+<ol>
+<li>要求NAS一直在线（断电、断网就熄火了）</li>
+<li>定时pull有一定的延迟，而且长时间没更新issue的情况下，定时pull很浪费资源</li>
+<li>之前用<code>blog-hugo</code>来维护模板，跟 issue的仓库分离，不方便一起维护</li>
+</ol>
+<p>抽时间弄了 github actions， 利用github支持的事件触发actions，实现自动生成和更新博客， nice！</p>
+<p>顺便把hugo的模板和博客放在一个仓库里，all in one了。简单方便。</p>
+<hr style="width: 100%"/>
+<h1 style="font-size: 1.5em;color:#555;font-weight: bold;">Comments: (on <a href="https://github.com/jrdeng/jrdeng.github.io/issues/11">github issue)</a></h1>
+<script src="https://utteranc.es/client.js"
+        repo="jrdeng/jrdeng.github.io"
+        issue-number="11"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/about/">关于</a></li>
+        
+        <li><a href="/post/10/">引进评论系统：utterances</a></li>
+        
+        <li><a href="/post/9/">KVM/libvirt forwarding ports to guest via iptables</a></li>
+        
+        <li><a href="/post/8/">Lua 5.4.x CMakeLists.txt</a></li>
+        
+        <li><a href="/post/7/">解决Windows不能远程登录ubuntu18.04.2（xRDP）的问题</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/github-actions'>Github Actions</a></li>
+                
+            </ul>
+            
         </div>
     </article>
     
-
     
 
-
-
-
-
+    
+    
 </div>
 
                     <footer id="footer">
@@ -125,6 +161,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

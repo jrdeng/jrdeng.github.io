@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>GraphQL | 无名的旅人</title>
-    <meta property="og:title" content="GraphQL - 无名的旅人">
+    <title>Github Actions | 无名的旅人</title>
+    <meta property="og:title" content="Github Actions - 无名的旅人">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="Python,github,hugo,blog">
-    <meta name="description" content="GraphQL">
+    <meta name="description" content="Github Actions">
         
     <meta name="author" content="jrdeng">
-    <meta property="og:url" content="https://jrdeng.github.io/tags/graphql/">
+    <meta property="og:url" content="https://jrdeng.github.io/tags/github-actions/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://jrdeng.github.io/tags/graphql/index.xml" title="无名的旅人" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://jrdeng.github.io/tags/github-actions/index.xml" title="无名的旅人" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -69,7 +69,7 @@
     
     <h3 class="archive-title">
         包含标签
-        <span class="keyword">GraphQL</span>
+        <span class="keyword">Github Actions</span>
         的文章
     </h3>
     
@@ -78,21 +78,19 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://jrdeng.github.io/post/1/">用github的issue做记录并生成静态博客</a>
+                <a href="https://jrdeng.github.io/post/11/">使用Github Actions做自动发布</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2018年8月27日
+            2021年1月29日
         </date>
         
         <div class="post-content">
-            构思：
- 在github上写issue 把issue爬下来（github-issue-fetcher） 评论系统用https://utteranc.es/，可以跟issue完美结合 用hugo等生成静态博客，并发布到github page（blog-hugo）  1. 在github上写issue 正如本篇一样，写到github的issue页面里，并保持OPEN状态。
-可以加一些 Labels（blog-hugo会当作tag写入博客）
-2. 把issue爬下来 写了些Python脚本，通过Github GraphQL API去爬issue list。
-由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。
-然后偶然发现author字段有时候会返回None， 有点没搞明白。。。……
-            <p class="readmore"><a href="https://jrdeng.github.io/post/1/">阅读全文</a></p>
+            之前一直用家里的NAS设置cron job来定时拉去issues生成博客， 这样做有一些缺陷：
+ 要求NAS一直在线（断电、断网就熄火了） 定时pull有一定的延迟，而且长时间没更新issue的情况下，定时pull很浪费资源 之前用blog-hugo来维护模板，跟 issue的仓库分离，不方便一起维护  抽时间弄了 github actions， 利用github支持的事件触发actions，实现自动生成和更新博客， nice！
+顺便把hugo的模板和博客放在一个仓库里，all in one了。简单方便。
+Comments: (on github issue)  ……
+            <p class="readmore"><a href="https://jrdeng.github.io/post/11/">阅读全文</a></p>
         </div>
     </article>
     
