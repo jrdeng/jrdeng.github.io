@@ -90,7 +90,7 @@
 表象是输入账号密码后，屏幕空白一段时间，然后提示：
 connection problem,giving upsome problem 各种分析之后发现应该是少了一个叫 xorgxrdp 的包，那就装上吧，结果这个包依赖另一个叫xserver-xorg-core的包，但是依赖不满足，所以没自动推荐安装。
 那就手动安装xserver-xorg-core吧，结果发现这货要让我卸载很多东西，包括xorg的很多包和桌面（xubuntu-desktop）。。。我怕会破坏环境影响使用，就停在这里没继续了。
-$ sudo apt-get install xserver-xorg-coreSuggested packages:xfonts-100dpi | xfonts-75dpiThe following packages will be REMOVED:xorg xserver-xorg-core-hwe-18.……
+$ sudo apt-get install xserver-xorg-coreSuggested packages:xfonts-100dpi | xfonts-75dpiThe following packages will be REMOVED:xorg xserver-xorg-core-hwe-18.04 xserver-xorg-hwe-18.04 xserver-xorg-input-all-hwe-18.04 xserver-xorg-input-libinput-hwe-18.04xserver-xorg-input-synaptics-hwe-18.04 xserver-xorg-input-wacom-hwe-18.04 xserver-xorg-video-all-hwe-18.04xserver-xorg-video-amdgpu-hwe-18.04 xserver-xorg-video-ati-hwe-18.04 xserver-xorg-video-fbdev-hwe-18.04xserver-xorg-video-intel-hwe-18.04 xserver-xorg-video-nouveau-hwe-18.04 xserver-xorg-video-qxl-hwe-18.04xserver-xorg-video-radeon-hwe-18.04 xserver-xorg-video-vesa-hwe-18.04 xserver-xorg-video-vmware-hwe-18.04 xubuntu-corexubuntu-desktopThe following NEW packages will be installed:xserver-xorg-core0 upgraded, 1 newly installed, 19 to remove and 0 not upgraded.……
             <p class="readmore"><a href="https://jrdeng.github.io/post/7/">阅读全文</a></p>
         </div>
     </article>
