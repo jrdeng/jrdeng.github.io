@@ -86,7 +86,7 @@
         </date>
         
         <div class="post-content">
-            # connections from outsidesudo iptables -I FORWARD -o virbr0 -d 192.168.122.226 -j ACCEPTsudo iptables -t nat -A PREROUTING -p tcp --dport 8006 -j DNAT --to 192.168.122.226:8006sudo iptables -t nat -A POSTROUTING -s 192.168.122.0/24 -j MASQUERADE# local subnetsudo iptables -A FORWARD -o virbr0 -m state --state RELATED,ESTABLISHED -j ACCEPTsudo iptables -A FORWARD -i virbr0 -o enp0s31f6 -j ACCEPTsudo iptables -A FORWARD -i virbr0 -o lo -j ACCEPT# save to persistent rulessudo service netfilter-persistent savesudo service netfilter-persistent reloadrefer to: https://aboullaite.……
+            # connections from outside sudo iptables -I FORWARD -o virbr0 -d 192.168.122.226 -j ACCEPT sudo iptables -t nat -A PREROUTING -p tcp --dport 8006 -j DNAT --to 192.168.122.226:8006 sudo iptables -t nat -A POSTROUTING -s 192.168.122.0/24 -j MASQUERADE # local subnet sudo iptables -A FORWARD -o virbr0 -m state --state RELATED,ESTABLISHED -j ACCEPT sudo iptables -A FORWARD -i virbr0 -o enp0s31f6 -j……
             <p class="readmore"><a href="https://jrdeng.github.io/post/9/">阅读全文</a></p>
         </div>
     </article>
@@ -102,7 +102,7 @@
         </date>
         
         <div class="post-content">
-            cmake_minimum_required(VERSION 3.12)project(Lua)add_definitions(-DLUA_COMPAT_5_3)if(UNIX)add_definitions(-DLUA_USE_LINUX)endif(UNIX)### force optionsif(WIN32)add_compile_options(&quot;$&lt;$&lt;C_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;)add_compile_options(&quot;$&lt;$&lt;CXX_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;)endif()# see https://www.lua.org/manual/5.4/readme.html#other### build libset(C_FILES lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lcorolib.c ldblib.c liolib.c lmathlib.c loadlib.c loslib.c lstrlib.c ltablib.c lutf8lib.c linit.c)# prepend 'src/'list(TRANSFORM C_FILES PREPEND &quot;src/&quot;)# in C++ styleset_source_files_properties(${C_FILES} PROPERTIES LANGUAGE CXX)add_library(lua STATIC ${C_FILES})### build interpreterset(C_FILES &quot;src/lua.……
+            cmake_minimum_required(VERSION 3.12) project(Lua) add_definitions(-DLUA_COMPAT_5_3) if(UNIX) add_definitions(-DLUA_USE_LINUX) endif(UNIX) ### force options if(WIN32) add_compile_options(&quot;$&lt;$&lt;C_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;) add_compile_options(&quot;$&lt;$&lt;CXX_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;) endif() # see https://www.lua.org/manual/5.4/readme.html#other ### build lib set(C_FILES lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lcorolib.c ldblib.c liolib.c lmathlib.c loadlib.c loslib.c lstrlib.c ltablib.c lutf8lib.c linit.c) # prepend 'src/' list(TRANSFORM C_FILES PREPEND &quot;src/&quot;) # in……
             <p class="readmore"><a href="https://jrdeng.github.io/post/8/">阅读全文</a></p>
         </div>
     </article>
@@ -118,11 +118,7 @@
         </date>
         
         <div class="post-content">
-            Windows远程登录工具（mstsc）可以说是比较好用的，为了方便开发，尝试在ubuntu上搭建xRDP，结果一直卡在登录界面。
-表象是输入账号密码后，屏幕空白一段时间，然后提示：
-connection problem,giving upsome problem 各种分析之后发现应该是少了一个叫 xorgxrdp 的包，那就装上吧，结果这个包依赖另一个叫xserver-xorg-core的包，但是依赖不满足，所以没自动推荐安装。
-那就手动安装xserver-xorg-core吧，结果发现这货要让我卸载很多东西，包括xorg的很多包和桌面（xubuntu-desktop）。。。我怕会破坏环境影响使用，就停在这里没继续了。
-$ sudo apt-get install xserver-xorg-coreSuggested packages:xfonts-100dpi | xfonts-75dpiThe following packages will be REMOVED:xorg xserver-xorg-core-hwe-18.04 xserver-xorg-hwe-18.04 xserver-xorg-input-all-hwe-18.04 xserver-xorg-input-libinput-hwe-18.04xserver-xorg-input-synaptics-hwe-18.04 xserver-xorg-input-wacom-hwe-18.04 xserver-xorg-video-all-hwe-18.04xserver-xorg-video-amdgpu-hwe-18.04 xserver-xorg-video-ati-hwe-18.04 xserver-xorg-video-fbdev-hwe-18.04xserver-xorg-video-intel-hwe-18.04 xserver-xorg-video-nouveau-hwe-18.04 xserver-xorg-video-qxl-hwe-18.04xserver-xorg-video-radeon-hwe-18.04 xserver-xorg-video-vesa-hwe-18.04 xserver-xorg-video-vmware-hwe-18.04 xubuntu-corexubuntu-desktopThe following NEW packages will be installed:xserver-xorg-core0 upgraded, 1 newly installed, 19 to remove and 0 not upgraded.……
+            Windows远程登录工具（mstsc）可以说是比较好用的，为了方便开发，尝试在ubuntu上搭建xRDP，结果一直卡在登录……
             <p class="readmore"><a href="https://jrdeng.github.io/post/7/">阅读全文</a></p>
         </div>
     </article>
@@ -138,12 +134,7 @@ $ sudo apt-get install xserver-xorg-coreSuggested packages:xfonts-100dpi | xfo
         </date>
         
         <div class="post-content">
-            用cmake+ndk的时候遇到一个错误：
-fatal error: 'asm/types.h' file not found用的是ndk自带的 build/cmake/android.toolchain.cmake。
-看现象是include路径没包含进来。
-解决方案，修改 build/cmake/android.toolchain.cmake，增加：
-if (${ANDROID_ABI} STREQUAL &quot;x86_64&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/x86_64-linux-android)elseif (${ANDROID_ABI} STREQUAL &quot;x86&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/i686-linux-android)elseif (${ANDROID_ABI} STREQUAL &quot;arm64-v8a&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/aarch64-linux-android)elseif (${ANDROID_ABI} STREQUAL &quot;armeabi-v7a&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/arm-linux-androideabi)endif()搞定。
-Comments: (on github issue)  ……
+            用cmake+ndk的时候遇到一个错误： fatal error: 'asm/types.h' file not found 用的是ndk自带的 build/cmake/android.toolcha……
             <p class="readmore"><a href="https://jrdeng.github.io/post/6/">阅读全文</a></p>
         </div>
     </article>
@@ -159,11 +150,7 @@ Comments: (on github issue)  ……
         </date>
         
         <div class="post-content">
-            这个bug 导致hugo生成静态页面失败。
-之前在另一台机器上解决了这个问题，也 提交 到github了。
-但是由于家里跑cron job的机器没有自动更新blog-hugo的代码，结果这两天的博客都是404。。。
-自动生成博客之前还是要先更新 blog-hugo 项目的代码啊！
-Comments: (on github issue)  ……
+            这个bug 导致hugo生成静态页面失败。 之前在另一台机器上解决了这个问题，也 提交 到github了。 但是由于家里跑cron jo……
             <p class="readmore"><a href="https://jrdeng.github.io/post/5/">阅读全文</a></p>
         </div>
     </article>
@@ -179,12 +166,7 @@ Comments: (on github issue)  ……
         </date>
         
         <div class="post-content">
-            用NDK standalone toolchain编译生成的动态库，在设备上跑的时候报这个错。
-搜了一下这个符号，似乎是STL相关的（？），而且是 libgnustl 里才有。
-最后解决办法：make standalone toolchain的时候，指定 --stl=libcxx ，不使用默认的 libgnustl。
-这样生成的toolchain不包含这个符号，生成的动态库也不会去找这个符号。
-（以前一直用的默认的libgnustl并没有报错，应该是项目上没用到STL相关的东西？）
-Comments: (on github issue)  ……
+            用NDK standalone toolchain编译生成的动态库，在设备上跑的时候报这个错。 搜了一下这个符号，似乎是STL相关的（？），而且是 libgnustl……
             <p class="readmore"><a href="https://jrdeng.github.io/post/4/">阅读全文</a></p>
         </div>
     </article>
@@ -200,14 +182,7 @@ Comments: (on github issue)  ……
         </date>
         
         <div class="post-content">
-            由于某些特殊原因，公司对外出的端口进行了限制，基本上只允许最常用的几个（21，22，80，443等）。
-这样的结果是，一些使用了自定义端口的网站 (https://example.com:8080) 就没办法访问了。
-这样我在家里的NAS服务器上装的nextcloud需要维护管理的时候就不太方便了（因为电信默认禁止了80和443端口的访问，自建的NAS服务器只能用自定义端口）。
-因为是自用，不可能让IT开绿灯，折中一下，只有找一个公司这边也开放的端口，然后就用这个端口来做NAS服务端口。
-说干就干，找到一个监听了（几乎）所有端口的服务器： http://portquiz.net （表示感谢！）
-写个脚本跑一跑：
-#!/bin/bashoutput=available_ports.txtecho &quot;&quot; &gt; $outputfor i in $(seq 1 65535); doecho &quot;testing $i...&quot;nc -zv portquiz.net $i 2&gt;&amp;1 | grep &quot;succeeded&quot; &gt;&gt; $outputdoneechoecho &quot;--= DONE =--&quot;echo 一顿扫下来，发现开放的端口果然很少。。勉强找两个用起来。
-Comments: (on github issue)  ……
+            由于某些特殊原因，公司对外出的端口进行了限制，基本上只允许最常用的几个（21，22，80，443等）。 这样的结果是，一些使用……
             <p class="readmore"><a href="https://jrdeng.github.io/post/3/">阅读全文</a></p>
         </div>
     </article>
@@ -223,16 +198,7 @@ Comments: (on github issue)  ……
         </date>
         
         <div class="post-content">
-            构思：
- 在github上写issue 把issue爬下来（github-issue-fetcher） 评论系统用https://utteranc.es/，可以跟issue完美结合 用hugo等生成静态博客，并发布到github page（blog-hugo）  1. 在github上写issue 正如本篇一样，写到github的issue页面里，并保持OPEN状态。
-可以加一些 Labels（blog-hugo会当作tag写入博客）
-2. 把issue爬下来 写了些Python脚本，通过Github GraphQL API去爬issue list。
-由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。
-然后偶然发现author字段有时候会返回None， 有点没搞明白。。。
-3. 评论系统 一句话：https://utteranc.es/ is amazing!!!
-4. 用hugo等生成静态博客，并发布到github page 按照hugo和主题的需求，写Markdown文件头，以及内容。（以及评论系统的脚本）
-我本地会有一个cron job自动去重新抓取issue和生成博客（如果内容没有变化，则不用push到github）。
-Comments: (on github issue)  ……
+            构思： 在github上写issue 把issue爬下来（github-issue-fetcher） 评论系统用https://u……
             <p class="readmore"><a href="https://jrdeng.github.io/post/1/">阅读全文</a></p>
         </div>
     </article>
