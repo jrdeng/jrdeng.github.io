@@ -13,10 +13,7 @@
       <pubDate>Tue, 13 Nov 2018 18:03:58 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jrdeng/blog-hugo/issues/2&#34;&gt;这个bug&lt;/a&gt; 导致hugo生成静态页面失败。&lt;/p&gt;
-&lt;p&gt;之前在另一台机器上解决了这个问题，也 &lt;a href=&#34;https://github.com/jrdeng/blog-hugo/commit/470c5728e5ed7528e0ea7b84a5aa196a4906ee91&#34;&gt;提交&lt;/a&gt; 到github了。&lt;/p&gt;
-&lt;p&gt;但是由于家里跑cron job的机器没有自动更新blog-hugo的代码，结果这两天的博客都是404。。。&lt;/p&gt;
-&lt;p&gt;自动生成博客之前还是要先更新 blog-hugo 项目的代码啊！&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jrdeng/blog-hugo/issues/2&#34;&gt;这个bug&lt;/a&gt; 导致hugo生成&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,22 +25,8 @@
       <description>&lt;p&gt;构思：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;在github上写issue&lt;/li&gt;
-&lt;li&gt;把issue爬下来（&lt;a href=&#34;https://github.com/jrdeng/github-issue-fetcher&#34;&gt;github-issue-fetcher&lt;/a&gt;）&lt;/li&gt;
-&lt;li&gt;评论系统用&lt;a href=&#34;https://utteranc.es/&#34;&gt;https://utteranc.es/&lt;/a&gt;，可以跟issue完美结合&lt;/li&gt;
-&lt;li&gt;用hugo等生成静态博客，并发布到github page（&lt;a href=&#34;https://github.com/jrdeng/blog-hugo&#34;&gt;blog-hugo&lt;/a&gt;）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;1-在github上写issue&#34;&gt;1. 在github上写issue&lt;/h2&gt;
-&lt;p&gt;正如本篇一样，写到github的issue页面里，并保持OPEN状态。&lt;/p&gt;
-&lt;p&gt;可以加一些 Labels（blog-hugo会当作tag写入博客）&lt;/p&gt;
-&lt;h2 id=&#34;2-把issue爬下来&#34;&gt;2. 把issue爬下来&lt;/h2&gt;
-&lt;p&gt;写了些Python脚本，通过Github GraphQL API去爬issue list。&lt;/p&gt;
-&lt;p&gt;由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。&lt;/p&gt;
-&lt;p&gt;然后偶然发现author字段有时候会返回None， 有点没搞明白。。。&lt;/p&gt;
-&lt;h2 id=&#34;3-评论系统&#34;&gt;3. 评论系统&lt;/h2&gt;
-&lt;p&gt;一句话：&lt;a href=&#34;https://utteranc.es/&#34;&gt;https://utteranc.es/&lt;/a&gt; is amazing!!!&lt;/p&gt;
-&lt;h2 id=&#34;4-用hugo等生成静态博客并发布到github-page&#34;&gt;4. 用hugo等生成静态博客，并发布到github page&lt;/h2&gt;
-&lt;p&gt;按照hugo和主题的需求，写Markdown文件头，以及内容。（以及评论系统的脚本）&lt;/p&gt;
-&lt;p&gt;我本地会有一个cron job自动去重新抓取issue和生成博客（如果内容没有变化，则不用push到github）。&lt;/p&gt;</description>
+&lt;li&gt;把issue爬下来（[github-issue-fetcher](&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
   </channel>

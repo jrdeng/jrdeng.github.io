@@ -13,20 +13,7 @@
       <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/9/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;# connections from outside
-sudo iptables -I FORWARD -o virbr0 -d  192.168.122.226 -j ACCEPT
-sudo iptables -t nat -A PREROUTING -p tcp --dport 8006 -j DNAT --to 192.168.122.226:8006
-sudo iptables -t nat -A POSTROUTING -s 192.168.122.0/24 -j MASQUERADE
-
-# local subnet
-sudo iptables -A FORWARD -o virbr0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-sudo iptables -A FORWARD -i virbr0 -o enp0s31f6 -j ACCEPT
-sudo iptables -A FORWARD -i virbr0 -o lo -j ACCEPT
-
-# save to persistent rules
-sudo service netfilter-persistent save
-sudo service netfilter-persistent reload
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;refer to: &lt;a href=&#34;https://aboullaite.me/kvm-qemo-forward-ports-with-iptables/&#34;&gt;https://aboullaite.me/kvm-qemo-forward-ports-with-iptables/&lt;/a&gt;&lt;/p&gt;</description>
+      <description></description>
     </item>
     
     <item>
@@ -35,67 +22,7 @@ sudo service netfilter-persistent reload
       <pubDate>Fri, 30 Oct 2020 12:22:14 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/8/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;cmake_minimum_required(VERSION 3.12)
-
-project(Lua)
-
-add_definitions(-DLUA_COMPAT_5_3)
-if(UNIX)
-    add_definitions(-DLUA_USE_LINUX)
-endif(UNIX)
-
-
-### force options
-if(WIN32)
-    add_compile_options(&amp;quot;$&amp;lt;$&amp;lt;C_COMPILER_ID:MSVC&amp;gt;:/utf-8&amp;gt;&amp;quot;)
-    add_compile_options(&amp;quot;$&amp;lt;$&amp;lt;CXX_COMPILER_ID:MSVC&amp;gt;:/utf-8&amp;gt;&amp;quot;)
-endif()
-
-# see https://www.lua.org/manual/5.4/readme.html#other
-
-
-### build lib
-set(C_FILES lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lcorolib.c ldblib.c liolib.c lmathlib.c loadlib.c loslib.c lstrlib.c ltablib.c lutf8lib.c linit.c)
-# prepend &#39;src/&#39;
-list(TRANSFORM C_FILES PREPEND &amp;quot;src/&amp;quot;)
-# in C++ style
-set_source_files_properties(${C_FILES} PROPERTIES LANGUAGE CXX)
-add_library(lua STATIC ${C_FILES})
-
-
-### build interpreter
-set(C_FILES &amp;quot;src/lua.c&amp;quot;)
-set_source_files_properties(${C_FILES} PROPERTIES LANGUAGE CXX)
-add_executable(lua-interpreter ${C_FILES})
-target_link_libraries(lua-interpreter lua)
-if(UNIX)
-    target_link_libraries(lua-interpreter m dl)
-endif(UNIX)
-set_target_properties(lua-interpreter PROPERTIES OUTPUT_NAME lua)
-
-
-### build compiler
-set(C_FILES &amp;quot;src/luac.c&amp;quot;)
-set_source_files_properties(${C_FILES} PROPERTIES LANGUAGE CXX)
-add_executable(luac ${C_FILES})
-target_link_libraries(luac lua)
-if(UNIX)
-    target_link_libraries(luac m dl)
-endif(UNIX)
-
-# install target
-install(TARGETS lua
-    RUNTIME DESTINATION lib
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-)
-install(TARGETS lua-interpreter luac
-    RUNTIME DESTINATION bin
-)
-install(FILES src/lua.hpp src/lua.h src/lualib.h src/lauxlib.h src/luaconf.h
-    DESTINATION include
-)
-&lt;/code&gt;&lt;/pre&gt;</description>
+      <description></description>
     </item>
     
     <item>
@@ -104,42 +31,7 @@ install(FILES src/lua.hpp src/lua.h src/lualib.h src/lauxlib.h src/luaconf.h
       <pubDate>Fri, 29 Mar 2019 10:35:05 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/7/</guid>
-      <description>&lt;p&gt;Windows远程登录工具（mstsc）可以说是比较好用的，为了方便开发，尝试在ubuntu上搭建xRDP，结果一直卡在登录界面。&lt;/p&gt;
-&lt;p&gt;表象是输入账号密码后，屏幕空白一段时间，然后提示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;connection problem,giving up
-some problem
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
-        &lt;img class=&#34;mx-auto&#34; alt=&#34;image&#34; src=&#34;https://user-images.githubusercontent.com/170314/55204676-e3697280-520a-11e9-8359-58c853f8c051.png&#34; /&gt;   
-    &lt;/p&gt;
-&lt;p&gt;各种分析之后发现应该是少了一个叫 &lt;code&gt;xorgxrdp&lt;/code&gt; 的包，那就装上吧，结果这个包依赖另一个叫&lt;code&gt;xserver-xorg-core&lt;/code&gt;的包，但是依赖不满足，所以没自动推荐安装。&lt;/p&gt;
-&lt;p&gt;那就手动安装&lt;code&gt;xserver-xorg-core&lt;/code&gt;吧，结果发现这货要让我卸载很多东西，包括xorg的很多包和桌面（xubuntu-desktop）。。。我怕会破坏环境影响使用，就停在这里没继续了。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install xserver-xorg-core
-
-Suggested packages:
-  xfonts-100dpi | xfonts-75dpi
-The following packages will be REMOVED:
-  xorg xserver-xorg-core-hwe-18.04 xserver-xorg-hwe-18.04 xserver-xorg-input-all-hwe-18.04 xserver-xorg-input-libinput-hwe-18.04
-  xserver-xorg-input-synaptics-hwe-18.04 xserver-xorg-input-wacom-hwe-18.04 xserver-xorg-video-all-hwe-18.04
-  xserver-xorg-video-amdgpu-hwe-18.04 xserver-xorg-video-ati-hwe-18.04 xserver-xorg-video-fbdev-hwe-18.04
-  xserver-xorg-video-intel-hwe-18.04 xserver-xorg-video-nouveau-hwe-18.04 xserver-xorg-video-qxl-hwe-18.04
-  xserver-xorg-video-radeon-hwe-18.04 xserver-xorg-video-vesa-hwe-18.04 xserver-xorg-video-vmware-hwe-18.04 xubuntu-core
-  xubuntu-desktop
-The following NEW packages will be installed:
-  xserver-xorg-core
-0 upgraded, 1 newly installed, 19 to remove and 0 not upgraded.
-Need to get 1,351 kB of archives.
-After this operation, 5,753 kB disk space will be freed.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;后来发现 Griffon 的 &lt;a href=&#34;http://c-nergy.be/blog/?p=13390&#34;&gt;这篇文章：http://c-nergy.be/blog/?p=13390&lt;/a&gt; （因为已经fix了，图片也是借用的他文章里的，感谢！）。文章提到卸载后再把xorg的一些包安装回去就可以了，既然有先行者了，我就跟着做吧。&lt;/p&gt;
-&lt;p&gt;各种安装、卸载，最后我多加了一步，把桌面装回来了：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install xserver-xorg-core
-$ sudo apt-get -y install xserver-xorg-input-all
-$ sudo apt-get install xorgxrdp
-$ sudo apt-get install xubuntu-desktop
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;装完重启，环境看起来一切OK，暂时未见明显异常。&lt;/p&gt;
-&lt;p&gt;Windows登录，成功！又可以愉快的搬砖了。。。&lt;/p&gt;
-&lt;p&gt;最后，Thanks Griffon!&lt;/p&gt;
-&lt;p&gt;所以说遇到困难还是要勇于尝试啊 =。=&lt;/p&gt;
-&lt;p&gt;感觉少了年轻时候的锐气，想当年折腾系统的时候，可是不惜数据被格式化无数遍的啊  lol.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Windows远程登录工具（mstsc）可以说是比较好用的，为了方便开发，尝试在ubuntu上搭建xRDP，结果一直卡在登录&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -148,21 +40,7 @@ $ sudo apt-get install xubuntu-desktop
       <pubDate>Fri, 15 Mar 2019 17:27:44 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/6/</guid>
-      <description>&lt;p&gt;用cmake+ndk的时候遇到一个错误：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fatal error: &#39;asm/types.h&#39; file not found
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用的是ndk自带的 &lt;code&gt;build/cmake/android.toolchain.cmake&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;看现象是include路径没包含进来。&lt;/p&gt;
-&lt;p&gt;解决方案，修改 &lt;code&gt;build/cmake/android.toolchain.cmake&lt;/code&gt;，增加：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;if (${ANDROID_ABI} STREQUAL &amp;quot;x86_64&amp;quot;)
-    include_directories(${ANDROID_SYSROOT}/usr/include/x86_64-linux-android)
-elseif (${ANDROID_ABI} STREQUAL &amp;quot;x86&amp;quot;)
-    include_directories(${ANDROID_SYSROOT}/usr/include/i686-linux-android)
-elseif (${ANDROID_ABI} STREQUAL &amp;quot;arm64-v8a&amp;quot;)
-    include_directories(${ANDROID_SYSROOT}/usr/include/aarch64-linux-android)
-elseif (${ANDROID_ABI} STREQUAL &amp;quot;armeabi-v7a&amp;quot;)
-    include_directories(${ANDROID_SYSROOT}/usr/include/arm-linux-androideabi)
-endif()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定。&lt;/p&gt;</description>
+      <description>&lt;p&gt;用cmake+ndk的时候遇到一个错误：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -171,10 +49,7 @@ endif()
       <pubDate>Tue, 13 Nov 2018 18:03:58 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jrdeng/blog-hugo/issues/2&#34;&gt;这个bug&lt;/a&gt; 导致hugo生成静态页面失败。&lt;/p&gt;
-&lt;p&gt;之前在另一台机器上解决了这个问题，也 &lt;a href=&#34;https://github.com/jrdeng/blog-hugo/commit/470c5728e5ed7528e0ea7b84a5aa196a4906ee91&#34;&gt;提交&lt;/a&gt; 到github了。&lt;/p&gt;
-&lt;p&gt;但是由于家里跑cron job的机器没有自动更新blog-hugo的代码，结果这两天的博客都是404。。。&lt;/p&gt;
-&lt;p&gt;自动生成博客之前还是要先更新 blog-hugo 项目的代码啊！&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jrdeng/blog-hugo/issues/2&#34;&gt;这个bug&lt;/a&gt; 导致hugo生成&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -184,10 +59,7 @@ endif()
       
       <guid>https://jrdeng.github.io/post/4/</guid>
       <description>&lt;p&gt;用NDK standalone toolchain编译生成的动态库，在设备上跑的时候报这个错。&lt;/p&gt;
-&lt;p&gt;搜了一下这个符号，似乎是STL相关的（？），而且是 libgnustl 里才有。&lt;/p&gt;
-&lt;p&gt;最后解决办法：make standalone toolchain的时候，指定 &lt;code&gt;--stl=libcxx&lt;/code&gt; ，不使用默认的 libgnustl。&lt;/p&gt;
-&lt;p&gt;这样生成的toolchain不包含这个符号，生成的动态库也不会去找这个符号。&lt;/p&gt;
-&lt;p&gt;（以前一直用的默认的libgnustl并没有报错，应该是项目上没用到STL相关的东西？）&lt;/p&gt;</description>
+&lt;p&gt;搜了一下这个符号，似乎&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -197,26 +69,7 @@ endif()
       
       <guid>https://jrdeng.github.io/post/3/</guid>
       <description>&lt;p&gt;由于某些特殊原因，公司对外出的端口进行了限制，基本上只允许最常用的几个（21，22，80，443等）。&lt;/p&gt;
-&lt;p&gt;这样的结果是，一些使用了自定义端口的网站 (&lt;a href=&#34;https://example.com&#34;&gt;https://example.com&lt;/a&gt;:8080) 就没办法访问了。&lt;/p&gt;
-&lt;p&gt;这样我在家里的NAS服务器上装的nextcloud需要维护管理的时候就不太方便了（因为电信默认禁止了80和443端口的访问，自建的NAS服务器只能用自定义端口）。&lt;/p&gt;
-&lt;p&gt;因为是自用，不可能让IT开绿灯，折中一下，只有找一个公司这边也开放的端口，然后就用这个端口来做NAS服务端口。&lt;/p&gt;
-&lt;p&gt;说干就干，找到一个监听了（几乎）所有端口的服务器： &lt;a href=&#34;http://portquiz.net&#34;&gt;http://portquiz.net&lt;/a&gt; （表示感谢！）&lt;/p&gt;
-&lt;p&gt;写个脚本跑一跑：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-output=available_ports.txt
-echo &amp;quot;&amp;quot; &amp;gt; $output
-
-for i in $(seq 1 65535); do
-    echo &amp;quot;testing $i...&amp;quot;
-    nc -zv portquiz.net $i 2&amp;gt;&amp;amp;1 | grep &amp;quot;succeeded&amp;quot; &amp;gt;&amp;gt; $output
-done
-
-echo
-echo &amp;quot;--= DONE =--&amp;quot;
-echo
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;一顿扫下来，发现开放的端口果然很少。。勉强找两个用起来。&lt;/p&gt;</description>
+&lt;p&gt;这样的结果是，&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -228,22 +81,8 @@ echo
       <description>&lt;p&gt;构思：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;在github上写issue&lt;/li&gt;
-&lt;li&gt;把issue爬下来（&lt;a href=&#34;https://github.com/jrdeng/github-issue-fetcher&#34;&gt;github-issue-fetcher&lt;/a&gt;）&lt;/li&gt;
-&lt;li&gt;评论系统用&lt;a href=&#34;https://utteranc.es/&#34;&gt;https://utteranc.es/&lt;/a&gt;，可以跟issue完美结合&lt;/li&gt;
-&lt;li&gt;用hugo等生成静态博客，并发布到github page（&lt;a href=&#34;https://github.com/jrdeng/blog-hugo&#34;&gt;blog-hugo&lt;/a&gt;）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;1-在github上写issue&#34;&gt;1. 在github上写issue&lt;/h2&gt;
-&lt;p&gt;正如本篇一样，写到github的issue页面里，并保持OPEN状态。&lt;/p&gt;
-&lt;p&gt;可以加一些 Labels（blog-hugo会当作tag写入博客）&lt;/p&gt;
-&lt;h2 id=&#34;2-把issue爬下来&#34;&gt;2. 把issue爬下来&lt;/h2&gt;
-&lt;p&gt;写了些Python脚本，通过Github GraphQL API去爬issue list。&lt;/p&gt;
-&lt;p&gt;由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。&lt;/p&gt;
-&lt;p&gt;然后偶然发现author字段有时候会返回None， 有点没搞明白。。。&lt;/p&gt;
-&lt;h2 id=&#34;3-评论系统&#34;&gt;3. 评论系统&lt;/h2&gt;
-&lt;p&gt;一句话：&lt;a href=&#34;https://utteranc.es/&#34;&gt;https://utteranc.es/&lt;/a&gt; is amazing!!!&lt;/p&gt;
-&lt;h2 id=&#34;4-用hugo等生成静态博客并发布到github-page&#34;&gt;4. 用hugo等生成静态博客，并发布到github page&lt;/h2&gt;
-&lt;p&gt;按照hugo和主题的需求，写Markdown文件头，以及内容。（以及评论系统的脚本）&lt;/p&gt;
-&lt;p&gt;我本地会有一个cron job自动去重新抓取issue和生成博客（如果内容没有变化，则不用push到github）。&lt;/p&gt;</description>
+&lt;li&gt;把issue爬下来（[github-issue-fetcher](&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
   </channel>

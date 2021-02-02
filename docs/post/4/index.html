@@ -82,7 +82,8 @@
         
         <div class="post-content">
             <p>用NDK standalone toolchain编译生成的动态库，在设备上跑的时候报这个错。</p>
-<p>搜了一下这个符号，似乎是STL相关的（？），而且是 libgnustl 里才有。</p>
+<p>搜了一下这个符号，似乎</p>
+<p>是STL相关的（？），而且是 libgnustl 里才有。</p>
 <p>最后解决办法：make standalone toolchain的时候，指定 <code>--stl=libcxx</code> ，不使用默认的 libgnustl。</p>
 <p>这样生成的toolchain不包含这个符号，生成的动态库也不会去找这个符号。</p>
 <p>（以前一直用的默认的libgnustl并没有报错，应该是项目上没用到STL相关的东西？）</p>

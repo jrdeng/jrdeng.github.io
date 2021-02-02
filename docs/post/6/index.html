@@ -82,8 +82,7 @@
         
         <div class="post-content">
             <p>用cmake+ndk的时候遇到一个错误：</p>
-<pre><code>fatal error: 'asm/types.h' file not found
-</code></pre><p>用的是ndk自带的 <code>build/cmake/android.toolchain.cmake</code>。</p>
+e><p>用的是ndk自带的 <code>build/cmake/android.toolchain.cmake</code>。</p>
 <p>看现象是include路径没包含进来。</p>
 <p>解决方案，修改 <code>build/cmake/android.toolchain.cmake</code>，增加：</p>
 <pre><code>if (${ANDROID_ABI} STREQUAL &quot;x86_64&quot;)
