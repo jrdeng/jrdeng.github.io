@@ -86,11 +86,21 @@
         </date>
         
         <div class="post-content">
-            用cmake+ndk的时候遇到一个错误：
-fatal error: 'asm/types.h' file not found用的是ndk自带的 build/cmake/android.toolchain.cmake。
-看现象是include路径没包含进来。
-解决方案，修改 build/cmake/android.toolchain.cmake，增加：
-if (${ANDROID_ABI} STREQUAL &quot;x86_64&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/x86_64-linux-android)elseif (${ANDROID_ABI} STREQUAL &quot;x86&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/i686-linux-android)elseif (${ANDROID_ABI} STREQUAL &quot;arm64-v8a&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/aarch64-linux-android)elseif (${ANDROID_ABI} STREQUAL &quot;armeabi-v7a&quot;)include_directories(${ANDROID_SYSROOT}/usr/include/arm-linux-androideabi)endif()搞定。……
+            <p>用cmake+ndk的时候遇到一个错误：</p>
+<pre><code>fatal error: 'asm/types.h' file not found
+</code></pre><p>用的是ndk自带的 <code>build/cmake/android.toolchain.cmake</code>。</p>
+<p>看现象是include路径没包含进来。</p>
+<p>解决方案，修改 <code>build/cmake/android.toolchain.cmake</code>，增加：</p>
+<pre><code>if (${ANDROID_ABI} STREQUAL &quot;x86_64&quot;)
+    include_directories(${ANDROID_SYSROOT}/usr/include/x86_64-linux-android)
+elseif (${ANDROID_ABI} STREQUAL &quot;x86&quot;)
+    include_directories(${ANDROID_SYSROOT}/usr/include/i686-linux-android)
+elseif (${ANDROID_ABI} STREQUAL &quot;arm64-v8a&quot;)
+    include_directories(${ANDROID_SYSROOT}/usr/include/aarch64-linux-android)
+elseif (${ANDROID_ABI} STREQUAL &quot;armeabi-v7a&quot;)
+    include_directories(${ANDROID_SYSROOT}/usr/include/arm-linux-androideabi)
+endif()
+</code></pre><p>搞定。</p>……
             <p class="readmore"><a href="https://jrdeng.github.io/post/6/">阅读全文</a></p>
         </div>
     </article>
@@ -106,12 +116,11 @@ if (${ANDROID_ABI} STREQUAL &quot;x86_64&quot;)include_directories(${ANDROID_SY
         </date>
         
         <div class="post-content">
-            用NDK standalone toolchain编译生成的动态库，在设备上跑的时候报这个错。
-搜了一下这个符号，似乎是STL相关的（？），而且是 libgnustl 里才有。
-最后解决办法：make standalone toolchain的时候，指定 --stl=libcxx ，不使用默认的 libgnustl。
-这样生成的toolchain不包含这个符号，生成的动态库也不会去找这个符号。
-（以前一直用的默认的libgnustl并没有报错，应该是项目上没用到STL相关的东西？）
-Comments: (on github issue)  ……
+            <p>用NDK standalone toolchain编译生成的动态库，在设备上跑的时候报这个错。</p>
+<p>搜了一下这个符号，似乎是STL相关的（？），而且是 libgnustl 里才有。</p>
+<p>最后解决办法：make standalone toolchain的时候，指定 <code>--stl=libcxx</code> ，不使用默认的 libgnustl。</p>
+<p>这样生成的toolchain不包含这个符号，生成的动态库也不会去找这个符号。</p>
+<p>（以前一直用的默认的libgnustl并没有报错，应该是项目上没用到STL相关的东西？）</p>……
             <p class="readmore"><a href="https://jrdeng.github.io/post/4/">阅读全文</a></p>
         </div>
     </article>

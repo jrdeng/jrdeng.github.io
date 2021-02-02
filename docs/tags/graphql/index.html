@@ -86,12 +86,25 @@
         </date>
         
         <div class="post-content">
-            构思：
- 在github上写issue 把issue爬下来（github-issue-fetcher） 评论系统用https://utteranc.es/，可以跟issue完美结合 用hugo等生成静态博客，并发布到github page（blog-hugo）  1. 在github上写issue 正如本篇一样，写到github的issue页面里，并保持OPEN状态。
-可以加一些 Labels（blog-hugo会当作tag写入博客）
-2. 把issue爬下来 写了些Python脚本，通过Github GraphQL API去爬issue list。
-由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。
-然后偶然发现author字段有时候会返回None， 有点没搞明白。。。……
+            <p>构思：</p>
+<ol>
+<li>在github上写issue</li>
+<li>把issue爬下来（<a href="https://github.com/jrdeng/github-issue-fetcher">github-issue-fetcher</a>）</li>
+<li>评论系统用<a href="https://utteranc.es/">https://utteranc.es/</a>，可以跟issue完美结合</li>
+<li>用hugo等生成静态博客，并发布到github page（<a href="https://github.com/jrdeng/blog-hugo">blog-hugo</a>）</li>
+</ol>
+<h2 id="1-在github上写issue">1. 在github上写issue</h2>
+<p>正如本篇一样，写到github的issue页面里，并保持OPEN状态。</p>
+<p>可以加一些 Labels（blog-hugo会当作tag写入博客）</p>
+<h2 id="2-把issue爬下来">2. 把issue爬下来</h2>
+<p>写了些Python脚本，通过Github GraphQL API去爬issue list。</p>
+<p>由于API的限制，每次抓issues 最大只能100条（first:100），如果issue数目超过100， 需要用到 cursor 多次获取。</p>
+<p>然后偶然发现author字段有时候会返回None， 有点没搞明白。。。</p>
+<h2 id="3-评论系统">3. 评论系统</h2>
+<p>一句话：<a href="https://utteranc.es/">https://utteranc.es/</a> is amazing!!!</p>
+<h2 id="4-用hugo等生成静态博客并发布到github-page">4. 用hugo等生成静态博客，并发布到github page</h2>
+<p>按照hugo和主题的需求，写Markdown文件头，以及内容。（以及评论系统的脚本）</p>
+<p>我本地会有一个cron job自动去重新抓取issue和生成博客（如果内容没有变化，则不用push到github）。</p>……
             <p class="readmore"><a href="https://jrdeng.github.io/post/1/">阅读全文</a></p>
         </div>
     </article>
