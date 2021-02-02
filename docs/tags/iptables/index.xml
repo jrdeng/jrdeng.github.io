@@ -13,7 +13,7 @@
       <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/9/</guid>
-      <description></description>
+      <description># connections from outsidesudo iptables -I FORWARD -o virbr0 -d 192.168.122.226 -j ACCEPTsudo iptables -t nat -A PREROUTING -p tcp --dport 8006 -j DNAT --to 192.</description>
     </item>
     
   </channel>

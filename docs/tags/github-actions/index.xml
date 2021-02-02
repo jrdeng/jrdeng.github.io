@@ -13,10 +13,10 @@
       <pubDate>Fri, 29 Jan 2021 14:56:52 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/11/</guid>
-      <description>&lt;p&gt;之前一直用家里的NAS设置cron job来定时拉去issues生成博客， 这样做有一些缺陷：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;要求NAS一直在&lt;/li&gt;
-&lt;/ol&gt;</description>
+      <description>之前一直用家里的NAS设置cron job来定时拉去issues生成博客， 这样做有一些缺陷：
+ 要求NAS一直在线（断电、断网就熄火了） 定时pull有一定的延迟，而且长时间没更新issue的情况下，定时pull很浪费资源 之前用blog-hugo来维护模板，跟 issue的仓库分离，不方便一起维护  抽时间弄了 github actions， 利用github支持的事件触发actions，实现自动生成和更新博客， nice！
+顺便把hugo的模板和博客放在一个仓库里，all in one了。简单方便。
+Comments: (on github issue)  </description>
     </item>
     
   </channel>

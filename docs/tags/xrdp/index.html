@@ -86,7 +86,11 @@
         </date>
         
         <div class="post-content">
-            <p>Windows远程登录工具（mstsc）可以说是比较好用的，为了方便开发，尝试在ubuntu上搭建xRDP，结果一直卡在登录</p>……
+            Windows远程登录工具（mstsc）可以说是比较好用的，为了方便开发，尝试在ubuntu上搭建xRDP，结果一直卡在登录界面。
+表象是输入账号密码后，屏幕空白一段时间，然后提示：
+connection problem,giving upsome problem 各种分析之后发现应该是少了一个叫 xorgxrdp 的包，那就装上吧，结果这个包依赖另一个叫xserver-xorg-core的包，但是依赖不满足，所以没自动推荐安装。
+那就手动安装xserver-xorg-core吧，结果发现这货要让我卸载很多东西，包括xorg的很多包和桌面（xubuntu-desktop）。。。我怕会破坏环境影响使用，就停在这里没继续了。
+$ sudo apt-get install xserver-xorg-coreSuggested packages:xfonts-100dpi | xfonts-75dpiThe following packages will be REMOVED:xorg xserver-xorg-core-hwe-18.……
             <p class="readmore"><a href="https://jrdeng.github.io/post/7/">阅读全文</a></p>
         </div>
     </article>

@@ -13,7 +13,7 @@
       <pubDate>Fri, 30 Oct 2020 12:22:14 +0800</pubDate>
       
       <guid>https://jrdeng.github.io/post/8/</guid>
-      <description></description>
+      <description>cmake_minimum_required(VERSION 3.12)project(Lua)add_definitions(-DLUA_COMPAT_5_3)if(UNIX)add_definitions(-DLUA_USE_LINUX)endif(UNIX)### force optionsif(WIN32)add_compile_options(&amp;quot;$&amp;lt;$&amp;lt;C_COMPILER_ID:MSVC&amp;gt;:/utf-8&amp;gt;&amp;quot;)add_compile_options(&amp;quot;$&amp;lt;$&amp;lt;CXX_COMPILER_ID:MSVC&amp;gt;:/utf-8&amp;gt;&amp;quot;)endif()# see https://www.lua.org/manual/5.4/readme.html#other### build libset(C_FILES lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.</description>
     </item>
     
   </channel>
