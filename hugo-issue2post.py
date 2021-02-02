@@ -50,9 +50,6 @@ def write_hugo_body(md, issue):
 
 
 def write_comments(md, owner, repo, issue):
-    # to avoid comments are shown on main page, we add a <!--more--> tag if the len of body is less than hugo summary len
-    if len(issue['body']) < 62:
-        md.write('<!--more-->\n')
     md.write('<hr style="width: 100%"/>\n\n')
     md.write('<h1 style="font-size: 1.5em;color:#555;font-weight: bold;">Comments: (on <a href="{}">github issue)</a></h1>\n\n'.format(issue['url']))
 
