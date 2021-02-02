@@ -2,7 +2,7 @@ baseURL = "https://jrdeng.github.io"
 languageCode = "zh-CN"
 title = "无名的旅人"
 theme = "maupassant"
-summaryLength = 26
+summaryLength = 62
 
 [author]
   name = "jrdeng"
