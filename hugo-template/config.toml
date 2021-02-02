@@ -3,6 +3,7 @@ languageCode = "zh-CN"
 title = "无名的旅人"
 theme = "maupassant"
 summaryLength = 62
+hasCJKLanguage = true
 
 [author]
   name = "jrdeng"
