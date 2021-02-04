@@ -57,7 +57,7 @@ jobs:
           cd work_dir
           rm -rf docs/
           mkdir docs
-          cp CNAME.template docs/
+          cp CNAME.template docs/CNAME
           cp hugo-template/public/* docs/ -a
           echo `date` > docs/workaround
           git add .
