@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 无名的旅人</title>
-    <link>https://jrdeng.github.io/categories/</link>
+    <link>https://wuming.me/categories/</link>
     <description>Recent content in Categories on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language><atom:link href="https://jrdeng.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language><atom:link href="https://wuming.me/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
