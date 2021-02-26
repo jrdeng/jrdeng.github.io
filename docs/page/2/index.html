@@ -1,30 +1,24 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+	<meta name="generator" content="Hugo 0.80.0" />
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>cannot locate symbol &#34;_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base&#34; | 无名的旅人</title>
-    <meta property="og:title" content="cannot locate symbol &#34;_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base&#34; - 无名的旅人">
-    <meta property="og:type" content="article">
-        
-    <meta property="article:published_time" content='2018-11-08T11:17:39&#43;08:00'>
-        
-        
-    <meta property="article:modified_time" content='2018-11-08T11:17:39&#43;08:00'>
-        
+    <title>无名的旅人 | 和其光，同其尘</title>
+    <meta property="og:title" content="无名的旅人 | 和其光，同其尘">
+    <meta property="og:type" content="website">
     <meta name="Keywords" content="Python,github,hugo,blog">
-    <meta name="description" content="cannot locate symbol &#34;_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base&#34;">
-        
-    <meta name="author" content="jrdeng">
-    <meta property="og:url" content="https://wuming.me/post/4/">
+    <meta name="description" content="">
+    <meta property="og:url" content="https://wuming.me/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="https://wuming.me/index.xml" title="无名的旅人" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -42,9 +36,11 @@
         <div class="col-group">
             <div class="site-name ">
                 
-                    <a id="logo" href="https://wuming.me">
-                        无名的旅人
-                    </a>
+                    <h1>
+                        <a id="logo" href="https://wuming.me">
+                            无名的旅人
+                        </a>
+                    </h1>
                 
                 <p class="description">和其光，同其尘</p>
             </div>
@@ -72,68 +68,46 @@
     
     <article class="post">
         <header>
-            <h1 class="post-title">cannot locate symbol &#34;_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base&#34;</h1>
+            <h1 class="post-title">
+                <a href="https://wuming.me/post/1/" title="用github的issue做记录并生成静态博客">用github的issue做记录并生成静态博客</a>
+            </h1>
         </header>
         <date class="post-meta meta-date">
-            2018年11月8日
+            2018年8月27日
         </date>
         
-        
-        
         <div class="post-content">
-            <p>用NDK standalone toolchain编译生成的动态库，在设备上跑的时候报这个错。</p>
-<p>搜了一下这个符号，似乎是STL相关的（？），而且是 libgnustl 里才有。</p>
-<p>最后解决办法：make standalone toolchain的时候，指定 <code>--stl=libcxx</code> ，不使用默认的 libgnustl。</p>
-<p>这样生成的toolchain不包含这个符号，生成的动态库也不会去找这个符号。</p>
-<p>（以前一直用的默认的libgnustl并没有报错，应该是项目上没用到STL相关的东西？）</p>
-<hr style="width: 100%"/>
-<h1 style="font-size: 1.5em;color:#555;font-weight: bold;">Comments: (on <a href="https://github.com/jrdeng/jrdeng.github.io/issues/4">github issue)</a></h1>
-<script src="https://utteranc.es/client.js"
-        repo="jrdeng/jrdeng.github.io"
-        issue-number="4"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
+            github-issue-fetcher + blog-hugo + cron job 的方式已经放弃，改用 Github Actions来自动发布了。具体见 #11 本文仅供参考 构思： 在github上写issue 把iss……
         </div>
-
-        
-
-
-        
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="/post/3/">测试局域网的可用（外出）端口</a></li>
-        
-        <li><a href="/post/1/">用github的issue做记录并生成静态博客</a></li>
-        
-        <li><a href="/archives/">归档</a></li>
-        
-    </ul>
-</div>
-
-
-        <div class="post-meta meta-tags">
-            
-            <ul class="clearfix">
-                
-                <li><a href='/tags/android'>Android</a></li>
-                
-                <li><a href='/tags/%E6%8A%80%E6%9C%AF'>技术</a></li>
-                
-            </ul>
-            
-        </div>
+        <p class="readmore"><a href="https://wuming.me/post/1/">阅读全文</a></p>
     </article>
     
     
 
+
+
+<ol class="page-navigator">
     
+    <li class="prev">
+        <a href="https://wuming.me/">上一页</a>
+    </li>
     
+
+    
+    <li >
+        <a href="https://wuming.me/">1</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://wuming.me/page/2/">2</a>
+    </li>
+    
+
+    
+</ol>
+
+
+
 </div>
 
                     <footer id="footer">
@@ -156,16 +130,6 @@
 </footer>
 
 
-    
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [['$', '$']],
-                processEscapes: true
-                }
-            };
-    </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
