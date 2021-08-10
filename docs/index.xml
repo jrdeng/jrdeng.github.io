@@ -6,7 +6,16 @@
     <description>Recent content on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 29 Mar 2021 13:16:16 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Aug 2021 12:28:04 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle VPS端口和防火墙设置</title>
+      <link>https://wuming.me/post/14/</link>
+      <pubDate>Tue, 10 Aug 2021 12:28:04 +0800</pubDate>
+      
+      <guid>https://wuming.me/post/14/</guid>
+      <description>开放端口 Instances &amp;gt;&amp;gt; Instance Details &amp;gt;&amp;gt; Attached VNICs &amp;gt;&amp;gt; Subnet or VLAN &amp;gt;&amp;gt; Subnet - subnet-YYYYMMDD-HHMM &amp;gt;&amp;gt; Security Lists &amp;gt;&amp;gt; add rules for TCP/UDP/ICMP ... Ubuntu防火墙设置: sudo iptables -L sudo apt remove iptables-persistent sudo apt purge netfilter-persistent sudo iptables -L sudo iptables -P INPUT ACCEPT sudo iptables -P</description>
+    </item>
+    
     <item>
       <title>apt临时使用socks5代理</title>
       <link>https://wuming.me/post/13/</link>

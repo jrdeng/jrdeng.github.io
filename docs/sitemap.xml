@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wuming.me/post/14/</loc>
+    <lastmod>2021-08-10T12:28:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/post/</loc>
+    <lastmod>2021-08-10T12:28:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/</loc>
+    <lastmod>2021-08-10T12:28:04+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wuming.me/tags/apt/</loc>
     <lastmod>2021-03-29T13:16:16+08:00</lastmod>
   </url>
@@ -18,17 +33,7 @@
   </url>
   
   <url>
-    <loc>https://wuming.me/post/</loc>
-    <lastmod>2021-03-29T13:16:16+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wuming.me/tags/</loc>
-    <lastmod>2021-03-29T13:16:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/</loc>
     <lastmod>2021-03-29T13:16:16+08:00</lastmod>
   </url>
   
