@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wuming.me/post/14/</loc>
-    <lastmod>2021-08-10T12:28:04+08:00</lastmod>
+    <loc>https://wuming.me/tags/nextcloud/</loc>
+    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/post/15/</loc>
+    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wuming.me/post/</loc>
-    <lastmod>2021-08-10T12:28:04+08:00</lastmod>
+    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/tags/</loc>
+    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wuming.me/</loc>
+    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/post/14/</loc>
     <lastmod>2021-08-10T12:28:04+08:00</lastmod>
   </url>
   
@@ -29,11 +44,6 @@
   
   <url>
     <loc>https://wuming.me/tags/debian/</loc>
-    <lastmod>2021-03-29T13:16:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/tags/</loc>
     <lastmod>2021-03-29T13:16:16+08:00</lastmod>
   </url>
   
