@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wuming.me/tags/docker/</loc>
+    <lastmod>2022-10-09T11:18:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/post/17/</loc>
+    <lastmod>2022-10-09T11:18:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/post/</loc>
+    <lastmod>2022-10-09T11:18:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/tags/</loc>
+    <lastmod>2022-10-09T11:18:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/</loc>
+    <lastmod>2022-10-09T11:18:49+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wuming.me/tags/nextcloud/</loc>
     <lastmod>2022-01-12T09:55:16+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wuming.me/post/15/</loc>
-    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/post/</loc>
-    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/tags/</loc>
-    <lastmod>2022-01-12T09:55:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/</loc>
     <lastmod>2022-01-12T09:55:16+08:00</lastmod>
   </url>
   
