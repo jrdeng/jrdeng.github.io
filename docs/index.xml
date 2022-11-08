@@ -6,7 +6,16 @@
     <description>Recent content on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 09 Oct 2022 11:18:49 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Nov 2022 11:14:40 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>chrome with novnc in docker</title>
+      <link>https://wuming.me/post/18/</link>
+      <pubDate>Tue, 08 Nov 2022 11:14:40 +0800</pubDate>
+      
+      <guid>https://wuming.me/post/18/</guid>
+      <description>sudo docker run --name chrome-novnc -p 8080:8080 -e VNC_PASS=meiyoumima vital987/chrome-novnc:latestComments: (on github issue)  </description>
+    </item>
+    
     <item>
       <title>portainer重置密码</title>
       <link>https://wuming.me/post/17/</link>
