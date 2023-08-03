@@ -78,6 +78,25 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/19/">Where is the core dump?</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年8月3日
+        </date>
+        
+        <div class="post-content">
+            after setting ulimit -c unlimited, if you still don&rsquo;t get the core file in the workding dir. try to run this:
+cat /proc/sys/kernel/core_patternto get the path of the core dump files.
+test env: Ubuntu 20.04 (WSL), you may get:
+/mnt/wslg/dumps/core.%eComments: (on github issue)  ……
+            <p class="readmore"><a href="https://wuming.me/post/19/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/7/">解决Windows不能远程登录ubuntu18.04.2（xRDP）的问题</a>
             </h1>
         </header>
@@ -146,6 +165,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/19/" title="Where is the core dump?">Where is the core dump?</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/18/" title="chrome with novnc in docker">chrome with novnc in docker</a>
     </li>
     
@@ -179,10 +202,6 @@
     
     <li>
         <a href="https://wuming.me/post/9/" title="KVM/libvirt forwarding ports to guest via iptables">KVM/libvirt forwarding ports to guest via iptables</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/8/" title="Lua 5.4.x CMakeLists.txt">Lua 5.4.x CMakeLists.txt</a>
     </li>
     
 </ul>
@@ -220,6 +239,8 @@
     <a href="https://wuming.me/tags/ipv6/">IPv6</a>
     
     <a href="https://wuming.me/tags/kvm/">KVM</a>
+    
+    <a href="https://wuming.me/tags/linux/">Linux</a>
     
     <a href="https://wuming.me/tags/lua/">Lua</a>
     

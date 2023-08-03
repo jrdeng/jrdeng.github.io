@@ -71,6 +71,27 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/19/" title="Where is the core dump?">Where is the core dump?</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年8月3日
+        </date>
+        
+        <div class="post-content">
+            after setting ulimit -c unlimited, if you still don&rsquo;t get the core file in the workding dir. try to run this:
+cat /proc/sys/kernel/core_patternto get the path of the core dump files.
+test env: Ubuntu 20.04 (WSL), you may get:
+/mnt/wslg/dumps/core.%eComments: (on github issue)  ……
+        </div>
+        <p class="readmore"><a href="https://wuming.me/post/19/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/18/" title="chrome with novnc in docker">chrome with novnc in docker</a>
             </h1>
         </header>
@@ -230,24 +251,6 @@
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/8/" title="Lua 5.4.x CMakeLists.txt">Lua 5.4.x CMakeLists.txt</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年10月30日
-        </date>
-        
-        <div class="post-content">
-            cmake_minimum_required(VERSION 3.12) project(Lua) add_definitions(-DLUA_COMPAT_5_3) if(UNIX) add_definitions(-DLUA_USE_LINUX) endif(UNIX) ### force options if(WIN32) add_compile_options(&quot;$&lt;$&lt;C_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;) add_compile_options(&quot;$&lt;$&lt;CXX_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;) endif() # see https://www.lua.org/manual/5.4/readme.html#other ### build lib set(C_FILES lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lcorolib.c ldblib.c liolib.c lmathlib.c loadlib.c loslib.c lstrlib.c ltablib.c lutf8lib.c linit.c) # prepend 'src/' list(TRANSFORM C_FILES PREPEND &quot;src/&quot;) # in……
-        </div>
-        <p class="readmore"><a href="https://wuming.me/post/8/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -321,6 +324,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/19/" title="Where is the core dump?">Where is the core dump?</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/18/" title="chrome with novnc in docker">chrome with novnc in docker</a>
     </li>
     
@@ -354,10 +361,6 @@
     
     <li>
         <a href="https://wuming.me/post/9/" title="KVM/libvirt forwarding ports to guest via iptables">KVM/libvirt forwarding ports to guest via iptables</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/8/" title="Lua 5.4.x CMakeLists.txt">Lua 5.4.x CMakeLists.txt</a>
     </li>
     
 </ul>
@@ -395,6 +398,8 @@
     <a href="https://wuming.me/tags/ipv6/">IPv6</a>
     
     <a href="https://wuming.me/tags/kvm/">KVM</a>
+    
+    <a href="https://wuming.me/tags/linux/">Linux</a>
     
     <a href="https://wuming.me/tags/lua/">Lua</a>
     
