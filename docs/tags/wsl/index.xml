@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WSL on 无名的旅人</title>
+    <link>https://wuming.me/tags/wsl/</link>
+    <description>Recent content in WSL on 无名的旅人</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 06 Aug 2023 16:17:02 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 11家庭版安装WSL</title>
+      <link>https://wuming.me/post/20/</link>
+      <pubDate>Sun, 06 Aug 2023 16:17:02 +0800</pubDate>
+      
+      <guid>https://wuming.me/post/20/</guid>
+      <description>管理员权限打开PowerShell，执行： wsl --install 提示安装成功。但是启动WSL的时候报错： WslRegisterDistribution failed with error: 0x80370114 似乎是家庭版在“启用或关闭W</description>
+    </item>
+    
+  </channel>
+</rss>

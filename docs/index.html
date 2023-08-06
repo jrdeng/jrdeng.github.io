@@ -69,6 +69,22 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/20/" title="Windows 11家庭版安装WSL">Windows 11家庭版安装WSL</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年8月6日
+        </date>
+        
+        <div class="post-content">
+            管理员权限打开PowerShell，执行： wsl --install 提示安装成功。但是启动WSL的时候报错： WslRegisterDistribution failed with error: 0x80370114 似乎是家庭版在“启用或关闭W……
+        </div>
+        <p class="readmore"><a href="https://wuming.me/post/20/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/19/" title="Where is the core dump?">Where is the core dump?</a>
             </h1>
         </header>
@@ -213,22 +229,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
         <p class="readmore"><a href="https://wuming.me/post/10/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/9/" title="KVM/libvirt forwarding ports to guest via iptables">KVM/libvirt forwarding ports to guest via iptables</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年1月7日
-        </date>
-        
-        <div class="post-content">
-            # connections from outside sudo iptables -I FORWARD -o virbr0 -d 192.168.122.226 -j ACCEPT sudo iptables -t nat -A PREROUTING -p tcp --dport 8006 -j DNAT --to 192.168.122.226:8006 sudo iptables -t nat -A POSTROUTING -s 192.168.122.0/24 -j MASQUERADE # local subnet sudo iptables -A FORWARD -o virbr0 -m state --state RELATED,ESTABLISHED -j ACCEPT sudo iptables -A FORWARD -i virbr0 -o enp0s31f6 -j……
-        </div>
-        <p class="readmore"><a href="https://wuming.me/post/9/">阅读全文</a></p>
-    </article>
-    
     
 
 
@@ -303,6 +303,10 @@ test env: Ubuntu 20.04 (WSL), you may get:
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/20/" title="Windows 11家庭版安装WSL">Windows 11家庭版安装WSL</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/19/" title="Where is the core dump?">Where is the core dump?</a>
     </li>
     
@@ -336,10 +340,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
     
     <li>
         <a href="https://wuming.me/post/10/" title="引进评论系统：utterances">引进评论系统：utterances</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/9/" title="KVM/libvirt forwarding ports to guest via iptables">KVM/libvirt forwarding ports to guest via iptables</a>
     </li>
     
 </ul>
@@ -387,6 +387,8 @@ test env: Ubuntu 20.04 (WSL), you may get:
     <a href="https://wuming.me/tags/python/">Python</a>
     
     <a href="https://wuming.me/tags/ubuntu/">Ubuntu</a>
+    
+    <a href="https://wuming.me/tags/wsl/">WSL</a>
     
     <a href="https://wuming.me/tags/xrdp/">xRDP</a>
     

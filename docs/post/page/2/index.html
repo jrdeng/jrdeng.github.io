@@ -71,6 +71,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/9/" title="KVM/libvirt forwarding ports to guest via iptables">KVM/libvirt forwarding ports to guest via iptables</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年1月7日
+        </date>
+        
+        <div class="post-content">
+            # connections from outside sudo iptables -I FORWARD -o virbr0 -d 192.168.122.226 -j ACCEPT sudo iptables -t nat -A PREROUTING -p tcp --dport 8006 -j DNAT --to 192.168.122.226:8006 sudo iptables -t nat -A POSTROUTING -s 192.168.122.0/24 -j MASQUERADE # local subnet sudo iptables -A FORWARD -o virbr0 -m state --state RELATED,ESTABLISHED -j ACCEPT sudo iptables -A FORWARD -i virbr0 -o enp0s31f6 -j……
+        </div>
+        <p class="readmore"><a href="https://wuming.me/post/9/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/8/" title="Lua 5.4.x CMakeLists.txt">Lua 5.4.x CMakeLists.txt</a>
             </h1>
         </header>
@@ -267,6 +285,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/20/" title="Windows 11家庭版安装WSL">Windows 11家庭版安装WSL</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/19/" title="Where is the core dump?">Where is the core dump?</a>
     </li>
     
@@ -300,10 +322,6 @@
     
     <li>
         <a href="https://wuming.me/post/10/" title="引进评论系统：utterances">引进评论系统：utterances</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/9/" title="KVM/libvirt forwarding ports to guest via iptables">KVM/libvirt forwarding ports to guest via iptables</a>
     </li>
     
 </ul>
@@ -351,6 +369,8 @@
     <a href="https://wuming.me/tags/python/">Python</a>
     
     <a href="https://wuming.me/tags/ubuntu/">Ubuntu</a>
+    
+    <a href="https://wuming.me/tags/wsl/">WSL</a>
     
     <a href="https://wuming.me/tags/xrdp/">xRDP</a>
     
