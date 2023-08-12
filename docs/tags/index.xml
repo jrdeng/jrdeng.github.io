@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 06 Aug 2023 16:17:02 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Aug 2023 22:36:19 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>技术</title>
+      <link>https://wuming.me/tags/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sat, 12 Aug 2023 22:36:19 +0800</pubDate>
+      
+      <guid>https://wuming.me/tags/%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>WSL</title>
       <link>https://wuming.me/tags/wsl/</link>
@@ -103,15 +112,6 @@
       <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
       
       <guid>https://wuming.me/tags/kvm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>技术</title>
-      <link>https://wuming.me/tags/%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Thu, 07 Jan 2021 16:59:58 +0800</pubDate>
-      
-      <guid>https://wuming.me/tags/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     

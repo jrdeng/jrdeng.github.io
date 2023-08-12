@@ -6,7 +6,16 @@
     <description>Recent content in 技术 on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 07 Jan 2021 16:59:58 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Aug 2023 22:36:19 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCC Instrumentation Options</title>
+      <link>https://wuming.me/post/21/</link>
+      <pubDate>Sat, 12 Aug 2023 22:36:19 +0800</pubDate>
+      
+      <guid>https://wuming.me/post/21/</guid>
+      <description>https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html -fsanitize=address, -fsanitize=thread,&amp;hellip; Comments: (on github issue)</description>
+    </item>
+    
     <item>
       <title>KVM/libvirt forwarding ports to guest via iptables</title>
       <link>https://wuming.me/post/9/</link>
