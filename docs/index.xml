@@ -6,7 +6,16 @@
     <description>Recent content on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 12 Aug 2023 22:36:19 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Aug 2023 18:47:30 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL里docker启动失败</title>
+      <link>https://wuming.me/post/22/</link>
+      <pubDate>Thu, 17 Aug 2023 18:47:30 +0800</pubDate>
+      
+      <guid>https://wuming.me/post/22/</guid>
+      <description>报错： failed to start daemon: Error initializing network controller: error obtaining controller instance: unable to add return rule in DOCKER-ISOLATION-STAGE-1 chain: (iptables failed: iptables --wait -A DOCKER-ISOLATION-STAGE-1 -j RETURN: iptables v1.8.7 (nf_tables): RULE_APPEND failed (No such file or directory): rule in chain DOCKER-ISOLATION-STAGE-1 (exit status 4)) 解决： sudo update-alternatives --set iptables /usr/sbin/iptables-legacy sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy 参</description>
+    </item>
+    
     <item>
       <title>GCC Instrumentation Options</title>
       <link>https://wuming.me/post/21/</link>

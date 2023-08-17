@@ -78,6 +78,22 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/22/">WSL里docker启动失败</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年8月17日
+        </date>
+        
+        <div class="post-content">
+            报错： failed to start daemon: Error initializing network controller: error obtaining controller instance: unable to add return rule in DOCKER-ISOLATION-STAGE-1 chain: (iptables failed: iptables --wait -A DOCKER-ISOLATION-STAGE-1 -j RETURN: iptables v1.8.7 (nf_tables): RULE_APPEND failed (No such file or directory): rule in chain DOCKER-ISOLATION-STAGE-1 (exit status 4)) 解决： sudo update-alternatives --set iptables /usr/sbin/iptables-legacy sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy 参……
+            <p class="readmore"><a href="https://wuming.me/post/22/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/20/">Windows 11家庭版安装WSL</a>
             </h1>
         </header>
@@ -146,6 +162,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/22/" title="WSL里docker启动失败">WSL里docker启动失败</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/21/" title="GCC Instrumentation Options">GCC Instrumentation Options</a>
     </li>
     
@@ -179,10 +199,6 @@
     
     <li>
         <a href="https://wuming.me/post/12/" title="老毛子(padavan)路由器IPv6防火墙设置">老毛子(padavan)路由器IPv6防火墙设置</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/11/" title="使用Github Actions做自动发布">使用Github Actions做自动发布</a>
     </li>
     
 </ul>

@@ -69,6 +69,22 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/22/" title="WSL里docker启动失败">WSL里docker启动失败</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年8月17日
+        </date>
+        
+        <div class="post-content">
+            报错： failed to start daemon: Error initializing network controller: error obtaining controller instance: unable to add return rule in DOCKER-ISOLATION-STAGE-1 chain: (iptables failed: iptables --wait -A DOCKER-ISOLATION-STAGE-1 -j RETURN: iptables v1.8.7 (nf_tables): RULE_APPEND failed (No such file or directory): rule in chain DOCKER-ISOLATION-STAGE-1 (exit status 4)) 解决： sudo update-alternatives --set iptables /usr/sbin/iptables-legacy sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy 参……
+        </div>
+        <p class="readmore"><a href="https://wuming.me/post/22/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/21/" title="GCC Instrumentation Options">GCC Instrumentation Options</a>
             </h1>
         </header>
@@ -213,22 +229,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
         <p class="readmore"><a href="https://wuming.me/post/12/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/11/" title="使用Github Actions做自动发布">使用Github Actions做自动发布</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年1月29日
-        </date>
-        
-        <div class="post-content">
-            之前一直用家里的NAS设置cron job来定时拉去issues生成博客， 这样做有一些缺陷： 要求NAS一直在线（断电、断网就熄……
-        </div>
-        <p class="readmore"><a href="https://wuming.me/post/11/">阅读全文</a></p>
-    </article>
-    
     
 
 
@@ -303,6 +303,10 @@ test env: Ubuntu 20.04 (WSL), you may get:
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/22/" title="WSL里docker启动失败">WSL里docker启动失败</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/21/" title="GCC Instrumentation Options">GCC Instrumentation Options</a>
     </li>
     
@@ -336,10 +340,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
     
     <li>
         <a href="https://wuming.me/post/12/" title="老毛子(padavan)路由器IPv6防火墙设置">老毛子(padavan)路由器IPv6防火墙设置</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/11/" title="使用Github Actions做自动发布">使用Github Actions做自动发布</a>
     </li>
     
 </ul>
