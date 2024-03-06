@@ -3,32 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wuming.me/post/</loc>
+    <lastmod>2024-03-06T17:08:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/tags/</loc>
+    <lastmod>2024-03-06T17:08:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/tags/wsl/</loc>
+    <lastmod>2024-03-06T17:08:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/post/23/</loc>
+    <lastmod>2024-03-06T17:08:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wuming.me/</loc>
+    <lastmod>2024-03-06T17:08:55+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wuming.me/tags/docker/</loc>
     <lastmod>2023-08-17T18:47:30+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wuming.me/post/</loc>
-    <lastmod>2023-08-17T18:47:30+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/tags/</loc>
-    <lastmod>2023-08-17T18:47:30+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/tags/wsl/</loc>
-    <lastmod>2023-08-17T18:47:30+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wuming.me/post/22/</loc>
-    <lastmod>2023-08-17T18:47:30+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wuming.me/</loc>
     <lastmod>2023-08-17T18:47:30+08:00</lastmod>
   </url>
   

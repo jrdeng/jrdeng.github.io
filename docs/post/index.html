@@ -71,6 +71,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/23/" title="WSL无法使用ping命令">WSL无法使用ping命令</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2024年3月6日
+        </date>
+        
+        <div class="post-content">
+            问题： $ ping github.com ping: socktype: SOCK_RAW ping: socket: Operation not permitted ping: =&gt; missing cap_net_raw+p capability or setuid? 解决方法： $sudo setcap -r /usr/bin/ping 参考：https://github.com/microsoft/……
+        </div>
+        <p class="readmore"><a href="https://wuming.me/post/23/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/22/" title="WSL里docker启动失败">WSL里docker启动失败</a>
             </h1>
         </header>
@@ -233,24 +251,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/12/" title="老毛子(padavan)路由器IPv6防火墙设置">老毛子(padavan)路由器IPv6防火墙设置</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年2月26日
-        </date>
-        
-        <div class="post-content">
-            转发到内网机器： ip6tables -A FORWARD -d 域名 -j ACCEPT ip6tables -P OUTPUT ACCEPT 只转发指定端口： ip6tables -A FORWARD -p tcp -m multiport --dport 21,9090,10000 -d 域名 -j ACCEPT ip6tables -P OUTPUT ACCEPT 域名可以改成内网机器的IPv6地……
-        </div>
-        <p class="readmore"><a href="https://wuming.me/post/12/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -264,6 +264,10 @@ test env: Ubuntu 20.04 (WSL), you may get:
     
     <li >
         <a href="https://wuming.me/post/page/2/">2</a>
+    </li>
+    
+    <li >
+        <a href="https://wuming.me/post/page/3/">3</a>
     </li>
     
 
@@ -280,7 +284,7 @@ test env: Ubuntu 20.04 (WSL), you may get:
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://wuming.me">无名的旅人 By jrdeng</a>
+        &copy; 2024 <a href="https://wuming.me">无名的旅人 By jrdeng</a>
         
     </div>
     <br />
@@ -324,6 +328,10 @@ test env: Ubuntu 20.04 (WSL), you may get:
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/23/" title="WSL无法使用ping命令">WSL无法使用ping命令</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/22/" title="WSL里docker启动失败">WSL里docker启动失败</a>
     </li>
     
@@ -357,10 +365,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
     
     <li>
         <a href="https://wuming.me/post/13/" title="apt临时使用socks5代理">apt临时使用socks5代理</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/12/" title="老毛子(padavan)路由器IPv6防火墙设置">老毛子(padavan)路由器IPv6防火墙设置</a>
     </li>
     
 </ul>

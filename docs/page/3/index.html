@@ -1,27 +1,24 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+	<meta name="generator" content="Hugo 0.80.0" />
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>WSL | 无名的旅人</title>
-    <meta property="og:title" content="WSL - 无名的旅人">
-    <meta property="og:type" content="article">
-        
-        
+    <title>无名的旅人 | 和其光 同其尘</title>
+    <meta property="og:title" content="无名的旅人 | 和其光 同其尘">
+    <meta property="og:type" content="website">
     <meta name="Keywords" content="Python,github,hugo,blog">
-    <meta name="description" content="WSL">
-        
-    <meta name="author" content="jrdeng">
-    <meta property="og:url" content="https://wuming.me/tags/wsl/">
+    <meta name="description" content="">
+    <meta property="og:url" content="https://wuming.me/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://wuming.me/tags/wsl/index.xml" title="无名的旅人" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://wuming.me/index.xml" title="无名的旅人" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -39,15 +36,17 @@
         <div class="col-group">
             <div class="site-name ">
                 
-                    <a id="logo" href="https://wuming.me">
-                        无名的旅人
-                    </a>
+                    <h1>
+                        <a id="logo" href="https://wuming.me">
+                            无名的旅人
+                        </a>
+                    </h1>
                 
                 <p class="description">和其光 同其尘</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://wuming.me">首页</a>
+                    <a class="current" href="https://wuming.me">首页</a>
                     
                     <a  href="https://wuming.me/archives/" title="归档">归档</a>
                     
@@ -67,66 +66,49 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">WSL</span>
-        的文章
-    </h3>
-    
-
-    
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://wuming.me/post/23/">WSL无法使用ping命令</a>
+                <a href="https://wuming.me/post/1/" title="用github的issue做记录并生成静态博客">用github的issue做记录并生成静态博客</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2024年3月6日
+            2018年8月27日
         </date>
         
         <div class="post-content">
-            问题： $ ping github.com ping: socktype: SOCK_RAW ping: socket: Operation not permitted ping: =&gt; missing cap_net_raw+p capability or setuid? 解决方法： $sudo setcap -r /usr/bin/ping 参考：https://github.com/microsoft/……
-            <p class="readmore"><a href="https://wuming.me/post/23/">阅读全文</a></p>
+            github-issue-fetcher + blog-hugo + cron job 的方式已经放弃，改用 Github Actions来自动发布了。具体见 #11 本文仅供参考 构思： 在github上写issue 把iss……
         </div>
+        <p class="readmore"><a href="https://wuming.me/post/1/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/22/">WSL里docker启动失败</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2023年8月17日
-        </date>
-        
-        <div class="post-content">
-            报错： failed to start daemon: Error initializing network controller: error obtaining controller instance: unable to add return rule in DOCKER-ISOLATION-STAGE-1 chain: (iptables failed: iptables --wait -A DOCKER-ISOLATION-STAGE-1 -j RETURN: iptables v1.8.7 (nf_tables): RULE_APPEND failed (No such file or directory): rule in chain DOCKER-ISOLATION-STAGE-1 (exit status 4)) 解决： sudo update-alternatives --set iptables /usr/sbin/iptables-legacy sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy 参……
-            <p class="readmore"><a href="https://wuming.me/post/22/">阅读全文</a></p>
-        </div>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/20/">Windows 11家庭版安装WSL</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2023年8月6日
-        </date>
-        
-        <div class="post-content">
-            管理员权限打开PowerShell，执行： wsl --install 提示安装成功。但是启动WSL的时候报错： WslRegisterDistribution failed with error: 0x80370114 似乎是家庭版在“启用或关闭W……
-            <p class="readmore"><a href="https://wuming.me/post/20/">阅读全文</a></p>
-        </div>
-    </article>
-    
-
     
 
 
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="https://wuming.me/page/2/">上一页</a>
+    </li>
+    
+
+    
+    <li >
+        <a href="https://wuming.me/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://wuming.me/page/2/">2</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://wuming.me/page/3/">3</a>
+    </li>
+    
+
+    
+</ol>
 
 
 
