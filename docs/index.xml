@@ -13,7 +13,7 @@
       <pubDate>Wed, 06 Mar 2024 17:08:55 +0800</pubDate>
       
       <guid>https://wuming.me/post/23/</guid>
-      <description>问题： $ ping github.com ping: socktype: SOCK_RAW ping: socket: Operation not permitted ping: =&amp;gt; missing cap_net_raw+p capability or setuid? 解决方法： $sudo setcap -r /usr/bin/ping 参考：https://github.com/microsoft/</description>
+      <description>问题： $ ping github.com ping: socktype: SOCK_RAW ping: socket: Operation not permitted ping: =&amp;gt; missing cap_net_raw+p capability or setuid? 解决方法： $ sudo setcap cap_net_raw+p /bin/ping 参考：https://github.com/microsoft</description>
     </item>
     
     <item>
