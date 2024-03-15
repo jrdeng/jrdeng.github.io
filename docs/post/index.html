@@ -71,6 +71,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://wuming.me/post/24/" title="WSL里的Ubuntu/Debian因为时间不同步报错">WSL里的Ubuntu/Debian因为时间不同步报错</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2024年3月15日
+        </date>
+        
+        <div class="post-content">
+            报错： E: Release file for http://mirrors.tuna.tsinghua.edu.cn/ubuntu/dists/jammy-updates/InRelease is not valid yet (invalid for another 2h 1min 40s). Updates for this repository will not be applied. E: Release file for http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease is not valid yet (invalid for another 5h 19min 27s). Updates for this repository will not be applied. 同步时间解决： hwclock -s Comments: (on github issue)……
+        </div>
+        <p class="readmore"><a href="https://wuming.me/post/24/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://wuming.me/post/23/" title="WSL无法使用ping命令">WSL无法使用ping命令</a>
             </h1>
         </header>
@@ -233,24 +251,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/13/" title="apt临时使用socks5代理">apt临时使用socks5代理</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年3月29日
-        </date>
-        
-        <div class="post-content">
-            有些时候，一些没有mirror的apt源访问起来有点痛苦，比梯子还慢。。。所以让apt走梯子： apt -o Acquire::http::proxy=&quot;socks5h://127.0.0.1:1080/&quot; 原来的指令 注意是 socks5h 参考：……
-        </div>
-        <p class="readmore"><a href="https://wuming.me/post/13/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -328,6 +328,10 @@ test env: Ubuntu 20.04 (WSL), you may get:
 <ul class="widget-list">
     
     <li>
+        <a href="https://wuming.me/post/24/" title="WSL里的Ubuntu/Debian因为时间不同步报错">WSL里的Ubuntu/Debian因为时间不同步报错</a>
+    </li>
+    
+    <li>
         <a href="https://wuming.me/post/23/" title="WSL无法使用ping命令">WSL无法使用ping命令</a>
     </li>
     
@@ -361,10 +365,6 @@ test env: Ubuntu 20.04 (WSL), you may get:
     
     <li>
         <a href="https://wuming.me/post/14/" title="Oracle VPS端口和防火墙设置">Oracle VPS端口和防火墙设置</a>
-    </li>
-    
-    <li>
-        <a href="https://wuming.me/post/13/" title="apt临时使用socks5代理">apt临时使用socks5代理</a>
     </li>
     
 </ul>
