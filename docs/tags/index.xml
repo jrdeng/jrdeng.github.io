@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 Mar 2024 14:13:24 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2025 19:17:55 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://wuming.me/tags/docker/</link>
+      <pubDate>Wed, 08 Jan 2025 19:17:55 +0800</pubDate>
+      
+      <guid>https://wuming.me/tags/docker/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Ubuntu</title>
       <link>https://wuming.me/tags/ubuntu/</link>
@@ -22,15 +31,6 @@
       <pubDate>Fri, 15 Mar 2024 14:13:24 +0800</pubDate>
       
       <guid>https://wuming.me/tags/wsl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://wuming.me/tags/docker/</link>
-      <pubDate>Thu, 17 Aug 2023 18:47:30 +0800</pubDate>
-      
-      <guid>https://wuming.me/tags/docker/</guid>
       <description></description>
     </item>
     

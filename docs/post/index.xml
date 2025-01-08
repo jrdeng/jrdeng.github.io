@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 Mar 2024 14:13:24 +0800</lastBuildDate><atom:link href="https://wuming.me/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2025 19:17:55 +0800</lastBuildDate><atom:link href="https://wuming.me/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>给docker daemon设置代理</title>
+      <link>https://wuming.me/post/25/</link>
+      <pubDate>Wed, 08 Jan 2025 19:17:55 +0800</pubDate>
+      
+      <guid>https://wuming.me/post/25/</guid>
+      <description>修改配置： sudo vi /etc/docker/daemon.json { &amp;quot;proxies&amp;quot;: { &amp;quot;http-proxy&amp;quot;: &amp;quot;http://127.0.0.1:1080&amp;quot;, &amp;quot;https-proxy&amp;quot;: &amp;quot;http://127.0.0.1:1080&amp;quot;, &amp;quot;no-proxy&amp;quot;: &amp;quot;*.example.com,localhost,127.0.0.0/8&amp;quot; } } 重启服务： sudo systemctl restart docker ref: https://docs.docker.com/engine/daemon/proxy/ Comments: (on github issue)</description>
+    </item>
+    
     <item>
       <title>WSL里的Ubuntu/Debian因为时间不同步报错</title>
       <link>https://wuming.me/post/24/</link>

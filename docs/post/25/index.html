@@ -7,21 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>IPv6 | 无名的旅人</title>
-    <meta property="og:title" content="IPv6 - 无名的旅人">
+    <title>给docker daemon设置代理 | 无名的旅人</title>
+    <meta property="og:title" content="给docker daemon设置代理 - 无名的旅人">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2025-01-08T19:17:55&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2025-01-08T19:17:55&#43;08:00'>
         
     <meta name="Keywords" content="Python,github,hugo,blog">
-    <meta name="description" content="IPv6">
+    <meta name="description" content="给docker daemon设置代理">
         
     <meta name="author" content="jrdeng">
-    <meta property="og:url" content="https://wuming.me/tags/ipv6/">
+    <meta property="og:url" content="https://wuming.me/post/25/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://wuming.me/tags/ipv6/index.xml" title="无名的旅人" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -47,7 +50,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://wuming.me">首页</a>
+                    <a class="current" href="https://wuming.me">首页</a>
                     
                     <a  href="https://wuming.me/archives/" title="归档">归档</a>
                     
@@ -67,37 +70,83 @@
                     
 <div class="res-cons">
     
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">IPv6</span>
-        的文章
-    </h3>
-    
-
-    
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="https://wuming.me/post/12/">老毛子(padavan)路由器IPv6防火墙设置</a>
-            </h1>
+            <h1 class="post-title">给docker daemon设置代理</h1>
         </header>
         <date class="post-meta meta-date">
-            2021年2月26日
+            2025年1月8日
         </date>
         
+        
+        
         <div class="post-content">
-            转发到内网机器： ip6tables -A FORWARD -d 域名 -j ACCEPT ip6tables -P OUTPUT ACCEPT 只转发指定端口： ip6tables -A FORWARD -p tcp -m multiport --dport 21,9090,10000 -d 域名 -j ACCEPT ip6tables -P OUTPUT ACCEPT 域名可以改成内网机器的IPv6地……
-            <p class="readmore"><a href="https://wuming.me/post/12/">阅读全文</a></p>
+            <p>修改配置：</p>
+<blockquote>
+<p>sudo vi /etc/docker/daemon.json</p>
+</blockquote>
+<pre><code>{
+  &quot;proxies&quot;: {
+    &quot;http-proxy&quot;: &quot;http://127.0.0.1:1080&quot;,
+    &quot;https-proxy&quot;: &quot;http://127.0.0.1:1080&quot;,
+    &quot;no-proxy&quot;: &quot;*.example.com,localhost,127.0.0.0/8&quot;
+  }
+}
+</code></pre><p>重启服务：</p>
+<blockquote>
+<p>sudo systemctl restart docker</p>
+</blockquote>
+<p>ref: <a href="https://docs.docker.com/engine/daemon/proxy/">https://docs.docker.com/engine/daemon/proxy/</a></p>
+<hr style="width: 100%"/>
+<h1 style="font-size: 1.5em;color:#555;font-weight: bold;">Comments: (on <a href="https://github.com/jrdeng/jrdeng.github.io/issues/25">github issue)</a></h1>
+<script src="https://utteranc.es/client.js"
+        repo="jrdeng/jrdeng.github.io"
+        issue-number="25"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/22/">WSL里docker启动失败</a></li>
+        
+        <li><a href="/post/18/">chrome with novnc in docker</a></li>
+        
+        <li><a href="/post/17/">portainer重置密码</a></li>
+        
+        <li><a href="/post/24/">WSL里的Ubuntu/Debian因为时间不同步报错</a></li>
+        
+        <li><a href="/post/23/">WSL无法使用ping命令</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/docker'>docker</a></li>
+                
+            </ul>
+            
         </div>
     </article>
     
-
     
 
-
-
-
-
+    
+    
 </div>
 
                     <footer id="footer">
@@ -120,6 +169,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
