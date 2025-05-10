@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>Lua 5.4.x CMakeLists.txt | 无名的旅人</title>
-    <meta property="og:title" content="Lua 5.4.x CMakeLists.txt - 无名的旅人">
+    <title>记录一次飞牛OS升级后Docker启动失败 | 无名的旅人</title>
+    <meta property="og:title" content="记录一次飞牛OS升级后Docker启动失败 - 无名的旅人">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-10-30T12:22:14&#43;08:00'>
+    <meta property="article:published_time" content='2025-05-10T11:24:52&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2020-10-30T12:22:14&#43;08:00'>
+    <meta property="article:modified_time" content='2025-05-10T11:24:52&#43;08:00'>
         
     <meta name="Keywords" content="Python,github,hugo,blog">
-    <meta name="description" content="Lua 5.4.x CMakeLists.txt">
+    <meta name="description" content="记录一次飞牛OS升级后Docker启动失败">
         
     <meta name="author" content="jrdeng">
-    <meta property="og:url" content="https://wuming.me/post/8/">
+    <meta property="og:url" content="https://wuming.me/post/27/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -72,80 +72,26 @@
     
     <article class="post">
         <header>
-            <h1 class="post-title">Lua 5.4.x CMakeLists.txt</h1>
+            <h1 class="post-title">记录一次飞牛OS升级后Docker启动失败</h1>
         </header>
         <date class="post-meta meta-date">
-            2020年10月30日
+            2025年5月10日
         </date>
         
         
         
         <div class="post-content">
-            <pre><code>cmake_minimum_required(VERSION 3.12)
-
-project(Lua)
-
-add_definitions(-DLUA_COMPAT_5_3)
-if(UNIX)
-    add_definitions(-DLUA_USE_LINUX)
-endif(UNIX)
-
-
-### force options
-if(WIN32)
-    add_compile_options(&quot;$&lt;$&lt;C_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;)
-    add_compile_options(&quot;$&lt;$&lt;CXX_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;)
-endif()
-
-# see https://www.lua.org/manual/5.4/readme.html#other
-
-
-### build lib
-set(C_FILES lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lcorolib.c ldblib.c liolib.c lmathlib.c loadlib.c loslib.c lstrlib.c ltablib.c lutf8lib.c linit.c)
-# prepend 'src/'
-list(TRANSFORM C_FILES PREPEND &quot;src/&quot;)
-# in C++ style
-set_source_files_properties(${C_FILES} PROPERTIES LANGUAGE CXX)
-add_library(lua STATIC ${C_FILES})
-
-
-### build interpreter
-set(C_FILES &quot;src/lua.c&quot;)
-set_source_files_properties(${C_FILES} PROPERTIES LANGUAGE CXX)
-add_executable(lua-interpreter ${C_FILES})
-target_link_libraries(lua-interpreter lua)
-if(UNIX)
-    target_link_libraries(lua-interpreter m dl)
-endif(UNIX)
-set_target_properties(lua-interpreter PROPERTIES OUTPUT_NAME lua)
-
-
-### build compiler
-set(C_FILES &quot;src/luac.c&quot;)
-set_source_files_properties(${C_FILES} PROPERTIES LANGUAGE CXX)
-add_executable(luac ${C_FILES})
-target_link_libraries(luac lua)
-if(UNIX)
-    target_link_libraries(luac m dl)
-endif(UNIX)
-
-# install target
-install(TARGETS lua
-    RUNTIME DESTINATION lib
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-)
-install(TARGETS lua-interpreter luac
-    RUNTIME DESTINATION bin
-)
-install(FILES src/lua.hpp src/lua.h src/lualib.h src/lauxlib.h src/luaconf.h
-    DESTINATION include
-)
-</code></pre><hr style="width: 100%"/>
-<h1 style="font-size: 1.5em;color:#555;font-weight: bold;">Comments: (on <a href="https://github.com/jrdeng/jrdeng.github.io/issues/8">github issue)</a></h1>
+            <p>升级系统后，web UI显示docker是关闭状态，点击开关提示“未知错误”。</p>
+<p>SSH登录看docker服务是正常运行的。</p>
+<p>Root Dir也是正确的。但是 container没起来。</p>
+<p>尝试升级docker，重启后还是一样。</p>
+<p>最后想起配置文件之前加了一个代理，而这个代理是飞牛OS里一个定时任务启动的，把代理配置从<code>/etc/docker/daemon.json</code>里删掉重启OK了。。。</p>
+<p>猜测（也许）是因为docker启动时间比代理进程早？？？</p>
+<hr style="width: 100%"/>
+<h1 style="font-size: 1.5em;color:#555;font-weight: bold;">Comments: (on <a href="https://github.com/jrdeng/jrdeng.github.io/issues/27">github issue)</a></h1>
 <script src="https://utteranc.es/client.js"
         repo="jrdeng/jrdeng.github.io"
-        issue-number="8"
+        issue-number="27"
         theme="github-light"
         crossorigin="anonymous"
         async>
@@ -162,15 +108,15 @@ install(FILES src/lua.hpp src/lua.h src/lualib.h src/lauxlib.h src/luaconf.h
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/post/7/">解决Windows不能远程登录ubuntu18.04.2（xRDP）的问题</a></li>
+        <li><a href="/post/25/">给docker daemon设置代理</a></li>
         
-        <li><a href="/post/6/">fatal error: &#39;asm/types.h&#39; file not found</a></li>
+        <li><a href="/post/24/">WSL里的Ubuntu/Debian因为时间不同步报错</a></li>
         
-        <li><a href="/post/5/">blog-hugo的bug导致生成静态页面失败</a></li>
+        <li><a href="/post/23/">WSL无法使用ping命令</a></li>
         
-        <li><a href="/post/4/">cannot locate symbol &#34;_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base&#34;</a></li>
+        <li><a href="/post/22/">WSL里docker启动失败</a></li>
         
-        <li><a href="/post/3/">测试局域网的可用（外出）端口</a></li>
+        <li><a href="/post/21/">GCC Instrumentation Options</a></li>
         
     </ul>
 </div>
@@ -180,9 +126,9 @@ install(FILES src/lua.hpp src/lua.h src/lualib.h src/lauxlib.h src/luaconf.h
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/%E6%8A%80%E6%9C%AF'>技术</a></li>
+                <li><a href='/tags/nas'>NAS</a></li>
                 
-                <li><a href='/tags/lua'>Lua</a></li>
+                <li><a href='/tags/%E9%A3%9E%E7%89%9B'>飞牛</a></li>
                 
             </ul>
             

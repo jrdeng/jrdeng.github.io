@@ -6,7 +6,16 @@
     <description>Recent content on 无名的旅人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 Jan 2025 19:17:55 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 May 2025 11:24:52 +0800</lastBuildDate><atom:link href="https://wuming.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录一次飞牛OS升级后Docker启动失败</title>
+      <link>https://wuming.me/post/27/</link>
+      <pubDate>Sat, 10 May 2025 11:24:52 +0800</pubDate>
+      
+      <guid>https://wuming.me/post/27/</guid>
+      <description>升级系统后，web UI显示docker是关闭状态，点击开关提示“未知错误”。 SSH登录看docker服务是正常运行的。 Root Di</description>
+    </item>
+    
     <item>
       <title>给docker daemon设置代理</title>
       <link>https://wuming.me/post/25/</link>
