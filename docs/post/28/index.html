@@ -114,7 +114,7 @@ rm ~/miniconda3/miniconda.sh
 
 source ~/miniconda3/bin/activate
 conda init --all
-</code></pre><h2 id="py312">py312</h2>
+</code></pre><p>py312</p>
 <pre><code>conda create -n py312 python=3.12
 
 conda activate py312
@@ -125,15 +125,14 @@ cd ~/ComfyUI
 pip install -r requirements.txt
 
 python main.py --listen 0.0.0.0 #--port 8080 #--cpu
-</code></pre><h2 id="checkpoints">checkpoints</h2>
+</code></pre><p>checkpoints</p>
 <pre><code>#  https://huggingface.co &lt;==&gt; https://hf-mirror.com
 
 cd ~/ComfyUI/models/checkpoints/
 wget https://hf-mirror.com/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors?download=true -O v1-5-pruned-emaonly-fp16.safetensors
 
 #wget https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors?download=true -O v1-5-pruned-emaonly-fp16.safetensors
-</code></pre><h2 id="nodes">nodes</h2>
-<h3 id="gemini-api">gemini API</h3>
+</code></pre><p>Gemini API</p>
 <pre><code>cd ~/ComfyUI/custom_nodes/
 git clone https://github.com/CY-CHENYUE/ComfyUI-Gemini-API.git
 cd ComfyUI-Gemini-API
