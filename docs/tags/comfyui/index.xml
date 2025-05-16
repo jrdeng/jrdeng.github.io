@@ -13,7 +13,7 @@
       <pubDate>Fri, 16 May 2025 23:19:01 +0800</pubDate>
       
       <guid>https://wuming.me/post/28/</guid>
-      <description>tailescale https://login.tailscale.com 安装 curl -fsSL https://tailscale.com/install.sh | sh sudo tailscale up exit node echo &#39;net.ipv4.ip_forward = 1&#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf echo &#39;net.ipv6.conf.all.forwarding = 1&#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf sudo sysctl -p /etc/sysctl.d/99-tailscale.conf sudo tailscale set --advertise-exit-node 收发文件 Taildrop tailscale file cp &amp;lt;files&amp;gt; &amp;lt;name-or-ip&amp;gt;: sudo tailscale file get . filebrowser https://filebrowser.org/ 安装 curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh</description>
+      <description>tailescale https://login.tailscale.com 安装 curl -fsSL https://tailscale.com/install.sh | sh sudo tailscale up #--auth-key=tskey-abcdef1432341818 exit node echo &#39;net.ipv4.ip_forward = 1&#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf echo &#39;net.ipv6.conf.all.forwarding = 1&#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf sudo sysctl -p /etc/sysctl.d/99-tailscale.conf sudo tailscale set --advertise-exit-node 收发文件 Taildrop tailscale file cp &amp;lt;files&amp;gt; &amp;lt;name-or-ip&amp;gt;: sudo tailscale file get . filebrowser https://filebrowser.org/ 安装 curl -fsSL</description>
     </item>
     
   </channel>
