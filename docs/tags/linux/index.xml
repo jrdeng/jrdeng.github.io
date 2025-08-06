@@ -1,23 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Linux on 无名的旅人</title>
-    <link>https://wuming.me/tags/linux/</link>
-    <description>Recent content in Linux on 无名的旅人</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Thu, 03 Aug 2023 16:52:51 +0800</lastBuildDate><atom:link href="https://wuming.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Where is the core dump?</title>
-      <link>https://wuming.me/post/19/</link>
-      <pubDate>Thu, 03 Aug 2023 16:52:51 +0800</pubDate>
-      
-      <guid>https://wuming.me/post/19/</guid>
-      <description>after setting ulimit -c unlimited, if you still don&amp;rsquo;t get the core file in the workding dir. try to run this:
-cat /proc/sys/kernel/core_patternto get the path of the core dump files.
-test env: Ubuntu 20.04 (WSL), you may get:
-/mnt/wslg/dumps/core.%eComments: (on github issue)  </description>
-    </item>
-    
-  </channel>
-</rss>
