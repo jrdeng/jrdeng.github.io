@@ -5,10 +5,14 @@ on:
   push:
     paths:
       - ".github/**"
-      - "hugo-template/**"
-      - "*.py"
-      - "CNAME*"
+      - "scripts/**"
+      - "template/**"
   workflow_dispatch:
+
+env:
+  token: ${{ secrets.GITHUB_TOKEN }}
+  repo: ${{ github.repository }}
+  author: ${{ github.repository_owner }}
 
 jobs:
   build:
@@ -16,51 +20,28 @@ jobs:
 
     steps:
       - name: Setup Python3
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: 3.12
+      
+      - name: Install Python dependencies
+        run: |
+          pip install requests
 
       - name: Setup hugo
         run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.deb
-          sudo dpkg -i hugo_0.80.0_Linux-64bit.deb
-
-      - name: Query issues by using query-issues-action
-        uses: jrdeng/query-issues-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repo: ${{ github.repository }}
-          author: "jrdeng"
-          output_json: ./issues.json
+          wget https://github.com/gohugoio/hugo/releases/download/v0.148.2/hugo_0.148.2_linux-amd64.deb
+          sudo dpkg -i hugo_0.148.2_linux-amd64.deb
 
       - name: Checkout current repo (to ./work_dir/)
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: work_dir
           submodules: recursive
 
-      - name: Generate hugo site
+      - name: Run scripts
         run: |
           cd work_dir
-          ./hugo-issue2post.py -r $GITHUB_REPOSITORY -f ../issues.json -d hugo-template/content/post/
-          ls -l hugo-template/content/post/
-          cd hugo-template
-          hugo
-          ls -l
-          cd ../..
-
-      - name: Publish
-        # using :master/doc as github pages, maybe try another branch?
-        run: |
-          git config --global user.name "Github Actions"
-          git config --global user.email "bot@github.com"
-          cd work_dir
-          rm -rf docs/
-          mkdir docs
-          cp CNAME.template docs/CNAME
-          cp hugo-template/public/* docs/ -a
-          echo `date` > docs/workaround
-          git add .
-          git commit -m "auto gen by github actions"
-          git push
-          cd ..
+          ./scripts/1_query_issues.py -t ${token} -r ${repo} -a ${author} -f issues.json || exit 1
+          ./scripts/2_issues_to_posts.py -r ${repo} -f issues.json -d template/content/post/ || exit 1
+          ./scripts/3_gen_and_publish.sh || exit 1
