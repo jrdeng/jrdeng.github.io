@@ -26,12 +26,12 @@ jobs:
       
       - name: Install Python dependencies
         run: |
-          pip install requests
+          pip install requests || exit 1
 
       - name: Setup hugo
         run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.148.2/hugo_0.148.2_linux-amd64.deb
-          sudo dpkg -i hugo_0.148.2_linux-amd64.deb
+          wget https://github.com/gohugoio/hugo/releases/download/v0.148.2/hugo_0.148.2_linux-amd64.deb || exit 1
+          sudo dpkg -i hugo_0.148.2_linux-amd64.deb || exit 1
 
       - name: Checkout current repo (to ./work_dir/)
         uses: actions/checkout@v4
@@ -41,7 +41,8 @@ jobs:
 
       - name: Run scripts
         run: |
-          cd work_dir
+          cd work_dir || exit 1
+          chmod 755 scripts/* || exit 1
           ./scripts/1_query_issues.py -t ${token} -r ${repo} -a ${author} -f issues.json || exit 1
           ./scripts/2_issues_to_posts.py -r ${repo} -f issues.json -d template/content/post/ || exit 1
           ./scripts/3_gen_and_publish.sh || exit 1

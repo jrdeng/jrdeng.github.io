@@ -12,6 +12,6 @@ cp template/CNAME docs/CNAME
 cp template/public/* docs/ -a
 echo `date` > docs/workaround
 git add .
-git commit -m "auto gen by github actions"
+git commit -m "auto gen by Github Actions"
 git push
 cd ..
