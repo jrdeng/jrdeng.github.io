@@ -38,3 +38,6 @@ googleAnalytics = ""
   [markup.highlight]
     lineNos = true
     style = "github"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
