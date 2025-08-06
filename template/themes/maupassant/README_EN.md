@@ -122,7 +122,7 @@ Ads Preview [http://www.flysnow.org/](http://www.flysnow.org/)
 #### Google Analytics
 
 ```toml
-googleAnalytics = "GA ID"
+googleAnalytics = "G-xxxxxxxxxx"
 ```
 
 #### Custonm Summaries
@@ -138,6 +138,32 @@ summaryLength = 140
 
 ```toml
 disqusShortname = "yourdiscussshortname"
+```
+#### Waline comment system
+See [https://waline.js.org/](https://waline.js.org/)
+
+```toml
+[params.waline]
+    enable = false
+    placeholder = "说点什么吧..."
+    serverURL = "Your waline serverURL" 
+```
+
+#### Hide some articles on the homepage
+
+Change the value of ```hiddenFromHomePage``` to ```true``` to enable
+
+```toml
++++
+title = '{{ replace .Name "-" " " | title }}'
+tags = []
+categories = []
+date = "{{ .Date }}"
+toc = true
+draft = true
+hiddenFromHomePage = false
++++
+
 ```
 
 #### Page View Support

@@ -45,4 +45,4 @@ jobs:
           chmod 755 scripts/* || exit 1
           ./scripts/1_query_issues.py -t ${token} -r ${repo} -a ${author} -f issues.json || exit 1
           ./scripts/2_issues_to_posts.py -r ${repo} -f issues.json -d template/content/post/ || exit 1
-          #./scripts/3_gen_and_publish.sh || exit 1
+          ./scripts/3_gen_and_publish.sh || exit 1
