@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apt on 无名的旅人</title>
+    <link>https://wuming.me/tags/apt/</link>
+    <description>Recent content in Apt on 无名的旅人</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 29 Mar 2021 13:16:16 +0800</lastBuildDate>
+    <atom:link href="https://wuming.me/tags/apt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apt临时使用socks5代理</title>
+      <link>https://wuming.me/post/13/</link>
+      <pubDate>Mon, 29 Mar 2021 13:16:16 +0800</pubDate>
+      <guid>https://wuming.me/post/13/</guid>
+      <description>&lt;p&gt;有些时候，一些没有mirror的apt源访问起来有点痛苦，比梯子还慢。。。所以让apt走梯子：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt -o Acquire::http::proxy=&amp;#34;socks5h://127.0.0.1:1080/&amp;#34;   原来的指令&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意是 &lt;strong&gt;socks5h&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;参考： &lt;a href=&#34;https://askubuntu.com/a/1117259/1121096&#34;&gt;https://askubuntu.com/a/1117259/1121096&lt;/a&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+  </channel>
+</rss>

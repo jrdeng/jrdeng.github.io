@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ComfyUI on 无名的旅人</title>
+    <link>https://wuming.me/tags/comfyui/</link>
+    <description>Recent content in ComfyUI on 无名的旅人</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 16 May 2025 23:19:01 +0800</lastBuildDate>
+    <atom:link href="https://wuming.me/tags/comfyui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一些可能有用的东西</title>
+      <link>https://wuming.me/post/28/</link>
+      <pubDate>Fri, 16 May 2025 23:19:01 +0800</pubDate>
+      <guid>https://wuming.me/post/28/</guid>
+      <description>&lt;h1 id=&#34;tailescale&#34;&gt;tailescale&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://login.tailscale.com&#34;&gt;https://login.tailscale.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;安装&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -fsSL https://tailscale.com/install.sh | sh&#xA;sudo tailscale up #--auth-key=tskey-abcdef1432341818&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;exit node&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#39;net.ipv4.ip_forward = 1&amp;#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf&#xA;echo &amp;#39;net.ipv6.conf.all.forwarding = 1&amp;#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf&#xA;sudo sysctl -p /etc/sysctl.d/99-tailscale.conf&#xA;&#xA;sudo tailscale set --advertise-exit-node&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;收发文件 Taildrop&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tailscale file cp &amp;lt;files&amp;gt; &amp;lt;name-or-ip&amp;gt;:&#xA;&#xA;sudo tailscale file get .&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;filebrowser&#34;&gt;filebrowser&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://filebrowser.org/&#34;&gt;https://filebrowser.org/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;安装&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash&#xA;filebrowser -r /path/to/your/files&#xA;# default user: admin:admin&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参数修改：https://filebrowser.org/cli/filebrowser-config-set&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

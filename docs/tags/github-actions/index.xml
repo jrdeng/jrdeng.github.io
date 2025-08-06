@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github Actions on 无名的旅人</title>
+    <link>https://wuming.me/tags/github-actions/</link>
+    <description>Recent content in Github Actions on 无名的旅人</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 29 Jan 2021 14:56:52 +0800</lastBuildDate>
+    <atom:link href="https://wuming.me/tags/github-actions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Github Actions做自动发布</title>
+      <link>https://wuming.me/post/11/</link>
+      <pubDate>Fri, 29 Jan 2021 14:56:52 +0800</pubDate>
+      <guid>https://wuming.me/post/11/</guid>
+      <description>&lt;p&gt;之前一直用家里的NAS设置cron job来定时拉去issues生成博客， 这样做有一些缺陷：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;要求NAS一直在线（断电、断网就熄火了）&lt;/li&gt;&#xA;&lt;li&gt;定时pull有一定的延迟，而且长时间没更新issue的情况下，定时pull很浪费资源&lt;/li&gt;&#xA;&lt;li&gt;之前用&lt;code&gt;blog-hugo&lt;/code&gt;来维护模板，跟 issue的仓库分离，不方便一起维护&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;抽时间弄了 github actions， 利用github支持的事件触发actions，实现自动生成和更新博客， nice！&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

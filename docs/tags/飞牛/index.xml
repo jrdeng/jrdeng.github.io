@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>飞牛 on 无名的旅人</title>
+    <link>https://wuming.me/tags/%E9%A3%9E%E7%89%9B/</link>
+    <description>Recent content in 飞牛 on 无名的旅人</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 10 May 2025 11:24:52 +0800</lastBuildDate>
+    <atom:link href="https://wuming.me/tags/%E9%A3%9E%E7%89%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录一次飞牛OS升级后Docker启动失败</title>
+      <link>https://wuming.me/post/27/</link>
+      <pubDate>Sat, 10 May 2025 11:24:52 +0800</pubDate>
+      <guid>https://wuming.me/post/27/</guid>
+      <description>&lt;p&gt;升级系统后，web UI显示docker是关闭状态，点击开关提示“未知错误”。&lt;/p&gt;&#xA;&lt;p&gt;SSH登录看docker服务是正常运行的。&lt;/p&gt;&#xA;&lt;p&gt;Root Dir也是正确的。但是 container没起来。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

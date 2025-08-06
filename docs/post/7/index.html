@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>解决Windows不能远程登录ubuntu18.04.2（xRDP）的问题 | 无名的旅人</title>
+    <meta property="og:title" content="解决Windows不能远程登录ubuntu18.04.2（xRDP）的问题 - 无名的旅人">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-03-29T10:35:05&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-03-29T10:35:05&#43;08:00'>
+        
+    <meta name="Keywords" content="Python,GraphQL,码农,笔记">
+    <meta name="description" content="解决Windows不能远程登录ubuntu18.04.2（xRDP）的问题">
+        
+    <meta name="author" content="jrdeng">
+    <meta property="og:url" content="https://wuming.me/post/7/">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <link rel="icon" href='/favicon.png' type="image/png">
+    <link rel="alternate icon" href='/favicon.png' type="image/svg+xml">
+    
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://wuming.me/">
+                        无名的旅人
+                    </a>
+                
+                <p class="description">我有平生事 只与明月听</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://wuming.me/">Home</a>
+                    
+                    <a  href="https://wuming.me/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://wuming.me/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">解决Windows不能远程登录ubuntu18.04.2（xRDP）的问题</h1>
+        </header>
+        
+  <time datetime="2019-03-29T02:35:05Z" class="post-meta meta-date dt-published">
+    2019-03-29
+  </time>
+
+
+
+        
+        
+        <div class="post-content">
+            <p>Windows远程登录工具（mstsc）可以说是比较好用的，为了方便开发，尝试在ubuntu上搭建xRDP，结果一直卡在登录界面。</p>
+<p>表象是输入账号密码后，屏幕空白一段时间，然后提示：</p>
+<pre tabindex="0"><code>connection problem,giving up
+some problem
+</code></pre><p>
+        <img class="mx-auto" alt="image" src="https://user-images.githubusercontent.com/170314/55204676-e3697280-520a-11e9-8359-58c853f8c051.png" />   
+    </p>
+<p>各种分析之后发现应该是少了一个叫 <code>xorgxrdp</code> 的包，那就装上吧，结果这个包依赖另一个叫<code>xserver-xorg-core</code>的包，但是依赖不满足，所以没自动推荐安装。</p>
+<p>那就手动安装<code>xserver-xorg-core</code>吧，结果发现这货要让我卸载很多东西，包括xorg的很多包和桌面（xubuntu-desktop）。。。我怕会破坏环境影响使用，就停在这里没继续了。</p>
+<pre tabindex="0"><code>$ sudo apt-get install xserver-xorg-core
+
+Suggested packages:
+  xfonts-100dpi | xfonts-75dpi
+The following packages will be REMOVED:
+  xorg xserver-xorg-core-hwe-18.04 xserver-xorg-hwe-18.04 xserver-xorg-input-all-hwe-18.04 xserver-xorg-input-libinput-hwe-18.04
+  xserver-xorg-input-synaptics-hwe-18.04 xserver-xorg-input-wacom-hwe-18.04 xserver-xorg-video-all-hwe-18.04
+  xserver-xorg-video-amdgpu-hwe-18.04 xserver-xorg-video-ati-hwe-18.04 xserver-xorg-video-fbdev-hwe-18.04
+  xserver-xorg-video-intel-hwe-18.04 xserver-xorg-video-nouveau-hwe-18.04 xserver-xorg-video-qxl-hwe-18.04
+  xserver-xorg-video-radeon-hwe-18.04 xserver-xorg-video-vesa-hwe-18.04 xserver-xorg-video-vmware-hwe-18.04 xubuntu-core
+  xubuntu-desktop
+The following NEW packages will be installed:
+  xserver-xorg-core
+0 upgraded, 1 newly installed, 19 to remove and 0 not upgraded.
+Need to get 1,351 kB of archives.
+After this operation, 5,753 kB disk space will be freed.
+</code></pre><p>后来发现 Griffon 的 <a href="http://c-nergy.be/blog/?p=13390">这篇文章：http://c-nergy.be/blog/?p=13390</a> （因为已经fix了，图片也是借用的他文章里的，感谢！）。文章提到卸载后再把xorg的一些包安装回去就可以了，既然有先行者了，我就跟着做吧。</p>
+<p>各种安装、卸载，最后我多加了一步，把桌面装回来了：</p>
+<pre tabindex="0"><code>$ sudo apt-get install xserver-xorg-core
+$ sudo apt-get -y install xserver-xorg-input-all
+$ sudo apt-get install xorgxrdp
+$ sudo apt-get install xubuntu-desktop
+</code></pre><p>装完重启，环境看起来一切OK，暂时未见明显异常。</p>
+<p>Windows登录，成功！又可以愉快的搬砖了。。。</p>
+<p>最后，Thanks Griffon!</p>
+<p>所以说遇到困难还是要勇于尝试啊 =。=</p>
+<p>感觉少了年轻时候的锐气，想当年折腾系统的时候，可是不惜数据被格式化无数遍的啊  lol.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/6/">fatal error: &#39;asm/types.h&#39; file not found</a></li>
+        
+        <li><a href="/post/5/">blog-hugo的bug导致生成静态页面失败</a></li>
+        
+        <li><a href="/post/4/">cannot locate symbol &#34;_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base&#34;</a></li>
+        
+        <li><a href="/post/3/">测试局域网的可用（外出）端口</a></li>
+        
+        <li><a href="/post/1/">用github的issue做记录并生成静态博客</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/%E6%8A%80%E6%9C%AF' target="_blank">技术</a></li>
+                
+                <li><a href='/tags/ubuntu' target="_blank">Ubuntu</a></li>
+                
+                <li><a href='/tags/xrdp' target="_blank">xRDP</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2025 <a href="https://wuming.me/">无名的旅人 By jrdeng</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://wuming.me/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Latest articles</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://wuming.me/post/28/" title="一些可能有用的东西" target="_blank">一些可能有用的东西</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/27/" title="记录一次飞牛OS升级后Docker启动失败" target="_blank">记录一次飞牛OS升级后Docker启动失败</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/25/" title="给docker daemon设置代理" target="_blank">给docker daemon设置代理</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/24/" title="WSL里的Ubuntu/Debian因为时间不同步报错" target="_blank">WSL里的Ubuntu/Debian因为时间不同步报错</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/23/" title="WSL无法使用ping命令" target="_blank">WSL无法使用ping命令</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/22/" title="WSL里docker启动失败" target="_blank">WSL里docker启动失败</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/21/" title="GCC Instrumentation Options" target="_blank">GCC Instrumentation Options</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/20/" title="Windows 11家庭版安装WSL" target="_blank">Windows 11家庭版安装WSL</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/19/" title="Where is the core dump?" target="_blank">Where is the core dump?</a>
+    </li>
+    
+    <li>
+        <a href="https://wuming.me/post/18/" title="chrome with novnc in docker" target="_blank">chrome with novnc in docker</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://wuming.me/tags/android/">Android</a>
+    
+    <a href="https://wuming.me/tags/apt/">Apt</a>
+    
+    <a href="https://wuming.me/tags/comfyui/">ComfyUI</a>
+    
+    <a href="https://wuming.me/tags/debian/">Debian</a>
+    
+    <a href="https://wuming.me/tags/docker/">Docker</a>
+    
+    <a href="https://wuming.me/tags/github-actions/">Github Actions</a>
+    
+    <a href="https://wuming.me/tags/graphql/">GraphQL</a>
+    
+    <a href="https://wuming.me/tags/hugo/">Hugo</a>
+    
+    <a href="https://wuming.me/tags/iptables/">Iptables</a>
+    
+    <a href="https://wuming.me/tags/ipv6/">IPv6</a>
+    
+    <a href="https://wuming.me/tags/kvm/">KVM</a>
+    
+    <a href="https://wuming.me/tags/linux/">Linux</a>
+    
+    <a href="https://wuming.me/tags/lua/">Lua</a>
+    
+    <a href="https://wuming.me/tags/nas/">NAS</a>
+    
+    <a href="https://wuming.me/tags/nextcloud/">Nextcloud</a>
+    
+    <a href="https://wuming.me/tags/python/">Python</a>
+    
+    <a href="https://wuming.me/tags/tailscale/">Tailscale</a>
+    
+    <a href="https://wuming.me/tags/ubuntu/">Ubuntu</a>
+    
+    <a href="https://wuming.me/tags/wsl/">WSL</a>
+    
+    <a href="https://wuming.me/tags/xrdp/">XRDP</a>
+    
+    <a href="https://wuming.me/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+    
+    <a href="https://wuming.me/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/">测试标签</a>
+    
+    <a href="https://wuming.me/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+    
+    <a href="https://wuming.me/tags/%E9%A3%9E%E7%89%9B/">飞牛</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">Links</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://l2m2.top/" title="L2M2">L2M2</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">Meta</h3>
+        <ul class="widget-list">
+            <li><a href="https://wuming.me/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
