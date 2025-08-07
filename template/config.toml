@@ -1,6 +1,6 @@
 baseURL = "https://wuming.me"
 languageCode = "zh-CN"
-title = "无名的旅人"
+title = "无名的博客"
 theme = "maupassant"
 summaryLength = 62
 hasCJKLanguage = true
