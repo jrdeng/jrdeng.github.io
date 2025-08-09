@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd hexo
+npm i
 hexo g
 ls -l
 cd ..
