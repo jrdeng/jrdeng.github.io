@@ -1,12 +1,12 @@
-name: Hugo site generator
+name: Hexo site generator
 
 on:
   issues:
   push:
     paths:
       - ".github/**"
-      - "scripts/**"
-      - "template/**"
+      - "build/**"
+      - "hexo/**"
   workflow_dispatch:
 
 env:
@@ -23,26 +23,28 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.12
-      
+
       - name: Install Python dependencies
         run: |
-          pip install requests || exit 1
+          pip install requests || exit -1
 
-      - name: Setup hugo
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Setup Hexo
         run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.148.2/hugo_0.148.2_linux-amd64.deb || exit 1
-          sudo dpkg -i hugo_0.148.2_linux-amd64.deb || exit 1
+          npm install -g hexo-cli || exit -1
 
-      - name: Checkout current repo (to ./work_dir/)
+      - name: Checkout current repo
         uses: actions/checkout@v4
         with:
-          path: work_dir
           submodules: recursive
 
       - name: Run scripts
         run: |
-          cd work_dir || exit 1
-          chmod 755 scripts/* || exit 1
-          ./scripts/1_query_issues.py -t ${token} -r ${repo} -a ${author} -f issues.json || exit 1
-          ./scripts/2_issues_to_posts.py -r ${repo} -f issues.json -d template/content/post/ || exit 1
-          ./scripts/3_gen_and_publish.sh || exit 1
+          chmod 755 scripts/* || exit -1
+          ./scripts/1_query_issues.py -t ${token} -r ${repo} -a ${author} -f issues.json || exit -1
+          ./scripts/2_issues_to_posts.py -r ${repo} -f issues.json -d hexo/source/_posts/ || exit -1
+          ./scripts/3_gen_and_publish.sh || exit -1
