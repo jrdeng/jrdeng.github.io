@@ -9,6 +9,10 @@ on:
       - "hexo/**"
   workflow_dispatch:
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 env:
   token: ${{ secrets.GITHUB_TOKEN }}
   repo: ${{ github.repository }}
@@ -17,34 +21,48 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Setup Python3
         uses: actions/setup-python@v5
         with:
           python-version: 3.12
-
       - name: Install Python dependencies
         run: |
           pip install requests || exit -1
-
       - name: Setup node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
       - name: Setup Hexo
         run: |
           npm install -g hexo-cli || exit -1
-
       - name: Checkout current repo
         uses: actions/checkout@v4
         with:
           submodules: recursive
-
       - name: Run build scripts
         run: |
           chmod 755 build/* || exit -1
           ./build/1_query_issues.py -t ${token} -r ${repo} -a ${author} -f issues.json || exit -1
           ./build/2_issues_to_posts.py -r ${repo} -f issues.json -d hexo/source/_posts/ || exit -1
-          ./build/3_gen_and_publish.sh || exit -1
+          ./build/3_gen.sh || exit -1
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: hexo/public/
+
+  deploy:
+    needs: build
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
